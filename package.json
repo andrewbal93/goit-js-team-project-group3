@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "start": "vite",
     "build": "vite build --base=/goit-js-team-project-group3/",
     "preview": "vite preview"
   },
