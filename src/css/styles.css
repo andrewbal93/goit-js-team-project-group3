@@ -5,6 +5,8 @@
 
 /* header */
 @import url('./header.css');
+/* support */
+@import url('./support.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
