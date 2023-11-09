@@ -21,3 +21,6 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+/* Overlay Book Descr */
+@import url('./OverlayBookDescr.css');
