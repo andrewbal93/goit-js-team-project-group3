@@ -48,7 +48,7 @@ const foundations = [
         img: null,
     },
 ];
-const Murkup = foundations.map((elem, index, arr) => ` <li class="support-list">
+const Murkup = foundations.map((elem, index, arr) => ` <li class="support-foundation">
       <span>0${index + 1}</span>
      <a href="${elem.url}"> <img src="${elem.img}" alt="${elem.title}"></a>
     </li>`).join("");

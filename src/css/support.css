@@ -31,13 +31,16 @@
 .support-logo {
 }
 .foundations-list {
+  height: 292px;
+  width: 149px;
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 20px;
   margin-left: 40px;
+  overflow-y: scroll;
 }
-.support-list {
+.support-foundation {
   display: flex;
   gap: 16px;
 }
