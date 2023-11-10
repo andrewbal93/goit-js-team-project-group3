@@ -53,3 +53,27 @@ const Murkup = foundations.map((elem, index, arr) => ` <li class="support-founda
      <a href="${elem.url}"> <img src="${elem.img}" alt="${elem.title}"></a>
     </li>`).join("");
 foundationList.insertAdjacentHTML("afterbegin", Murkup);
+
+const supportBtn = document.querySelector(".support-slider-button");
+supportBtn.addEventListener('click', handlerSupport);
+let up = false;
+function handlerSupport() {
+
+    if (!up) {
+     foundationList.scrollBy(0, foundationList.querySelector("li").offsetHeight); 
+         if (foundationList.scrollTop === foundationList.offsetHeight - 40) {
+             up = true;
+        }
+    }
+
+   
+  
+    if (up) {
+        foundationList.scrollBy(0, -foundationList.querySelector("li").offsetHeight);
+        if (foundationList.scrollTop === 0) {
+              up = false; 
+    }
+  }
+
+
+}
