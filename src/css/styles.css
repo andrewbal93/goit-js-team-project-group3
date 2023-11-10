@@ -6,6 +6,10 @@
 /* header */
 @import url('./header.css');
 
+
+/* Overlay Book Descr */
+@import url('OverlayBookDescr.css');
+
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -22,5 +26,3 @@
   -webkit-text-size-adjust: 100%;
 }
 
-/* Overlay Book Descr */
-@import url('./OverlayBookDescr.css');
