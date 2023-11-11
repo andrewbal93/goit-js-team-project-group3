@@ -1,5 +1,5 @@
 .modal {
-    /* display: none; */
+    display: none;
     position: fixed;
     
     width: 100%;
@@ -32,9 +32,15 @@
 
 }
 .modal-close{
+    width: 24px;
+    height: 24px;
     position: absolute;
-    right: 12px;
     top: 12px;
+    right: 12px;
+    cursor: pointer;
+}
+.modal-close:hover{
+     stroke: var(--color1, #4f2ee8)#4F2EE8;
 }
 
 .book-cover {
@@ -117,6 +123,8 @@ margin-bottom: 18px;
     padding: 40px;
     }
     .modal-close{
+    width: 28px;
+    height: 28px;
         right: 24px;
         top: 24px;
     }
