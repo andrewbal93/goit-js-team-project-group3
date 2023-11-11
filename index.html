@@ -20,7 +20,7 @@
     />
     <script type="module" crossorigin src="/goit-js-team-project-group3/commonHelpers.js"></script>
     <link rel="modulepreload" crossorigin href="/goit-js-team-project-group3/assets/modulepreload-polyfill-ec808ebb.js">
-    <link rel="stylesheet" href="/goit-js-team-project-group3/assets/index-676f479b.css">
+    <link rel="stylesheet" href="/goit-js-team-project-group3/assets/index-d37889ea.css">
   </head>
 
   <body>
@@ -191,10 +191,16 @@
 
       <!-- Overlay Book Descr -->
       
-<div id="modal" class="modal open">
+<a href="#modal" class="open-modal">Open modal</a>
+
+<div id="modal" class="modal">
     <div class="modal-body">
     <div class="modal-content">
-        <a class="modal-close">X</a>
+       
+        <svg class="modal-close">
+            <use href="../img/sprite.svg#icon-x-close"></use>
+        </svg>
+    
         <div class="box">
         <img class="book-cover" src="../img/javascript.svg" alt="" width = "287" height = "408">
         <div class="text-content">
@@ -211,6 +217,9 @@
     </div>
 </div>
 </div>
+
+
+
       <!-- Footer -->
       <load src="" />
 
