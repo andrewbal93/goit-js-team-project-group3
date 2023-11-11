@@ -84,6 +84,8 @@ margin-bottom: 18px;
 }
 
 .book-description{
+    width:100%;
+    height:auto;
     line-height: 18px; /* 128.571% */
     letter-spacing: -0.56px; 
     margin-bottom: 14px;
