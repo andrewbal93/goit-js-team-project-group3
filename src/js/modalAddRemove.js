@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const closeModalButton = modal.querySelector('.modal-close');
     const addToShoppingListButton = modal.querySelector('.add-to-list');
     const backdrop = modal.querySelector('.modal-body');
-
+    const underButtonText = modal.querySelector('.under-btn-text');
+    
     // Open modal
     openModalLink.addEventListener('click', function () {
         modal.classList.add('open');
@@ -20,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const closeModal = function () {
         modal.classList.remove('open');
         document.body.style.overflow = ''; // Відновлення прокрутки фону
+        // underButtonText.style.display = 'none';
     };
 
     closeModalButton.addEventListener('click', closeModal);
@@ -32,7 +34,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Add to / Remove from shopping list
-    shoppingListButton.addEventListener('click', function () {
+    addToShoppingListButton.addEventListener('click', function (event) {
+        event.stopPropagation();
         // Оновлюємо інформацію про список в localStorage
         let shoppingList = JSON.parse(localStorage.getItem('shoppingList')) || [];
         const bookTitle = modal.querySelector('.book-title').textContent;
@@ -46,7 +49,8 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
 
         // Оновлюємо текст кнопки в модалці
-        updateShoppingListButton(shoppingList);
+        const isBookInList = updateShoppingListButton(shoppingList);
+        underButtonText.style.display = isBookInList ? 'block' : 'none';
     });
 
     // Функція для оновлення тексту кнопки відповідно до стану списку
@@ -55,15 +59,17 @@ document.addEventListener('DOMContentLoaded', function () {
         const isBookInList = shoppingList.includes(bookTitle);
 
         if (isBookInList) {
-            shoppingListButton.textContent = 'Remove from the shopping list';
+            addToShoppingListButton.textContent = 'Remove from the shopping list';
         } else {
-            shoppingListButton.textContent = 'Add to shopping list';
+            addToShoppingListButton.textContent = 'Add to shopping list';
         }
+        return isBookInList;
     }
 
     // Ініціалізація тексту кнопки при завантаженні сторінки
     const initialShoppingList = JSON.parse(localStorage.getItem('shoppingList')) || [];
     updateShoppingListButton(initialShoppingList);
+    // underButtonText.style.display = 'none';
 });
 
 
