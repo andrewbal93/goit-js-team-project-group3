@@ -1,0 +1,89 @@
+.shopping-list-card {
+  position: relative;
+  display: flex;
+  width: 996px;
+  height: 213px;
+  padding: 24px;
+  align-items: flex-start;
+
+  flex-shrink: 0;
+  border-radius: 16px;
+  border: 2px solid rgba(79, 46, 232, 0.4);
+  background: #fff;
+}
+
+.shopping-list-card:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.book-name {
+  margin-bottom: 4px;
+  font-family: DM Sans;
+  color: #111;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.125;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.book-category {
+  margin-bottom: 14px;
+  color: #b4afaf;
+
+  font-family: DM Sans;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.167;
+  letter-spacing: 0.03em;
+}
+.book-description {
+  margin-bottom: 48px;
+  color: #111;
+
+  font-family: DM Sans;
+  width: 808px;
+  height: 53px;
+
+  font-size: 14px;
+
+  font-weight: 400;
+  line-height: 1.29;
+  letter-spacing: 0.04em;
+}
+.book-author {
+  color: #b4afaf;
+
+  font-family: DM Sans;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+}
+
+.book-cover {
+  margin-right: 24px;
+}
+
+.book-salers {
+  /* margin-right: 24px; */
+}
+
+.delete-btn {
+  position: absolute;
+  top: 24px;
+  right: 25px;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.stores-list {
+  display: flex;
+  position: absolute;
+  bottom: 24px;
+  right: 25px;
+  align-items: center;
+  gap: 24px;
+}
