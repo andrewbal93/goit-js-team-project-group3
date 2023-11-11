@@ -1,8 +1,14 @@
 
-<div id="modal" class="modal open">
+<a href="#modal" class="open-modal">Open modal</a>
+
+<div id="modal" class="modal">
     <div class="modal-body">
     <div class="modal-content">
-        <a class="modal-close">X</a>
+       
+        <svg class="modal-close">
+            <use href="../img/sprite.svg#icon-x-close"></use>
+        </svg>
+    
         <div class="box">
         <img class="book-cover" src="../img/javascript.svg" alt="" width = "287" height = "408">
         <div class="text-content">
@@ -19,3 +25,6 @@
     </div>
 </div>
 </div>
+
+
+<script src="./js/modalAddRemove.js" type="module"></script>
