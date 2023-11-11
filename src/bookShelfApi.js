@@ -17,7 +17,7 @@ export function fetchAllTopBooks() {
 }
 
 // Запит Книги окремої категорії
-export function fetchBooksBySelectedCategory() {
+export function fetchBooksBySelectedCategory(selectedCategory) {
   return axios
     .get(`/books/category?category=${selectedCategory}`)
     .then(resp => {
