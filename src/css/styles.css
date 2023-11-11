@@ -1,11 +1,19 @@
 @import url('./fonts.css');
 @import url('./reset.css');
-@import url('./container.css');
-@import url('./variables.css');
 
-/* header */
 @import url('./header.css');
+
 @import url('./category.css');
+
+/* support */
+@import url('./support.css');
+
+/* shopping-list */
+@import url('./shopping-list.css');
+
+/* Overlay Book Descr */
+@import url('OverlayBookDescr.css');
+
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -21,3 +29,4 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+

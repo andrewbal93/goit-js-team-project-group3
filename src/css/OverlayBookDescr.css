@@ -1,0 +1,135 @@
+.modal {
+  /* display: none; */
+  position: fixed;
+
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.modal-body {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal.open {
+  overflow: hidden;
+}
+
+.modal-content {
+  background: #fff;
+  min-width: 320px;
+  max-width: 335px;
+  border-radius: 8px;
+  padding: 40px 24px;
+  position: relative;
+}
+.modal-close {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+}
+
+.book-cover {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 14px;
+}
+.book-title {
+  font-weight: 700;
+  line-height: 18px; /* 112.5% */
+  letter-spacing: -0.64px;
+  margin-bottom: 4px;
+}
+
+.book-author {
+  color: #b4afaf;
+
+  font-family: DM Sans;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 14px; /* 116.667% */
+  letter-spacing: -0.48px;
+  margin-bottom: 18px;
+}
+
+.book-description {
+  line-height: 18px; /* 128.571% */
+  letter-spacing: -0.56px;
+  margin-bottom: 14px;
+}
+
+.marketplace-logo {
+  display: inline-block;
+  margin: 0 8px;
+}
+
+.amazon {
+  filter: grayscale(100%);
+}
+
+.amazon:hover {
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
+}
+
+.apple-books {
+  filter: grayscale(100%);
+  margin-bottom: 44px;
+}
+
+.apple-books:active {
+  filter: brightness(0) invert(1);
+}
+
+.add-to-list {
+  margin: 0 auto;
+  padding: 14px 28px;
+  border: 2px solid #4f2ee8;
+  border-radius: 40px;
+  cursor: pointer;
+  gap: 10px;
+  left: auto;
+  display: block;
+}
+
+.add-to-list:hover {
+  background-color: #4f2ee8;
+  color: white;
+}
+.add-to-list:focus {
+  background-color: #4f2ee8;
+  color: white;
+}
+
+@media screen and (min-width: 769px) {
+  .modal-content {
+    max-width: 579px;
+    padding: 40px;
+  }
+  .modal-close {
+    right: 24px;
+    top: 24px;
+  }
+  .book-cover {
+    margin-right: 24px;
+    margin-bottom: 40px;
+  }
+
+  .box {
+    display: flex;
+  }
+  .book-author {
+    margin-bottom: 20px;
+  }
+  .book-description {
+    margin-bottom: 20px;
+  }
+  .add-to-list {
+    width: 100%;
+  }
+}
