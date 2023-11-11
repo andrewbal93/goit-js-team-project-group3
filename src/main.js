@@ -1,3 +1,5 @@
 // import refs from './js/modalAddRemove.js';
 // const {modal} = refs;
-// console.log(modal);
+// console.log(modal)
+import './js/header'
+
