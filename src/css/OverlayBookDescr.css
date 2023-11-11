@@ -1,5 +1,5 @@
 .modal {
-    display: none;
+   
     position: fixed;
     
     width: 100%;
@@ -7,9 +7,21 @@
     background: rgba(0, 0, 0, 0.5);
     top: 0;
     left: 0;
-    z-index: 1;
-    
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.8s ease 0s;
 }
+
+.modal.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal.open .modal-content {
+transform: perspective(600px) translate(0px, 0%) rotatex(0deg);
+opacity: 1;
+}
+
 .modal-body{
     min-height: 100%;
     display: flex;
@@ -17,9 +29,9 @@
     justify-content: center;
    
 }
-.modal.open {
+/* .modal.open {
     overflow: hidden;
-} 
+}  */
 
 .modal-content {
     background: #fff;
@@ -28,6 +40,9 @@
     border-radius: 8px;
     padding: 40px 24px;
     position: relative;
+    transition: all 0.8s ease 0s;
+    opacity: 0;
+    transform: perspective(600px) translate(0px, -100%) rotatex(45deg);
    
 
 }
@@ -40,7 +55,7 @@
     cursor: pointer;
 }
 .modal-close:hover{
-     stroke: var(--color1, #4f2ee8)#4F2EE8;
+     stroke: var(--color1, #4f2ee8);
 }
 
 .book-cover {
