@@ -1,0 +1,21 @@
+:root {
+  --gray: #b4afaf;
+  --white: #ffffff;
+  --black: #111111;
+  --violet: #4f2ee8;
+  --yellow: #eac645;
+  --light-bg-cl: #f6f6f6;
+  --dark-bg-cl: #202024;
+  --logo-text-light: #000000;
+  --logo-text-dark: #f3f3f3;
+  --book-list-light: rgba(17, 17, 17, 0.6);
+  --book-list-dark: rgba(255, 255, 255, 0.6);
+  --shopping-list-border: 2px solid rgba(79, 46, 232, 0.4);
+
+  --support-Ukraine-bg: radial-gradient(
+    189.32% 190.93% at 59.76% -23.42%,
+    #4f2ee8 18.03%,
+    #fff 100%
+  );
+  --support-Ukraine-box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.1);
+}
