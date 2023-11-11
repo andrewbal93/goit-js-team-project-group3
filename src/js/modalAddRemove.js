@@ -43,3 +43,44 @@ document.addEventListener('DOMContentLoaded', function () {
         shoppingListBtn.removeEventListener('click', updateShoppingList);
     }
 });
+
+
+
+
+async function fetchBookDetails(bookId) {
+    try {
+        // Зробіть запит до API з використанням Axios
+        const response = await axios.get(`https://books-backend.p.goit.global/books/${bookId}`);
+
+        // Отримайте детальну інформацію про книгу з відповіді
+        const bookDetails = response.data;
+
+        // Виведіть інформацію про книгу (змініть console.log за потреби)
+        console.log('Book Image:', bookDetails.book_image);
+        console.log('Title:', bookDetails.title);
+        console.log('Author:', bookDetails.author);
+        console.log('Description:', bookDetails.description);
+        console.log('Buy Links:');
+        bookDetails.buy_links.forEach(link => {
+            console.log(`${link.name}: ${link.url}`);
+        });
+
+        // Поверніть об'єкт з детальною інформацією про книгу
+        return bookDetails;
+    } catch (error) {
+        // Обробка помилок
+        console.error('Error fetching book details:', error.message);
+        throw error; // Прокидування помилки для подальшої обробки
+    }
+}
+
+// Викликати функцію та передати ідентифікатор книги
+fetchBookDetails('your_book_id_here')
+    .then(bookDetails => {
+        // Робіть що завгодно з отриманою інформацією про книгу
+        console.log('Book Details:', bookDetails);
+    })
+    .catch(error => {
+        // Обробити помилки, якщо є
+        console.error('Error:', error.message);
+    });
