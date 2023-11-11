@@ -2,12 +2,12 @@ import Notiflix from 'notiflix';
 import { createPagination } from './pagination';
 import { user } from './auth-user';
 
-import dumpIcon from '../images/dump-icon.png';
-import bookColumn1 from '../images/book-column@1x.png';
-import bookColumn2 from '../images/book-column@2x.png';
-import store1 from '../images/modal/store1.png';
-import store2 from '../images/modal/store2.png';
-import store3 from '../images/modal/store3.png';
+import dumpIcon from '../img/dump-icon.png';
+import bookColumn1 from '../img/book-column@1x.png';
+import bookColumn2 from '../img/book-column@2x.png';
+import store1 from '../img/modal/store1.png';
+import store2 from '../img/modal/store2.png';
+import store3 from '../img/modal/store3.png';
 
 const shoppingListEl = document.querySelector('.js-shopping_list');
 
