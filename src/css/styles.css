@@ -3,6 +3,10 @@
 
 @import url('./header.css');
 
+@import url('./category.css');
+
+/* support */
+@import url('./support.css');
 
 /* shopping-list */
 @import url('./shopping-list.css');

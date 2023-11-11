@@ -64,6 +64,11 @@
 .book-cover {
   margin-right: 24px;
 }
+
+.book-salers {
+  /* margin-right: 24px; */
+}
+
 .delete-btn {
   position: absolute;
   top: 24px;
@@ -80,4 +85,5 @@
   bottom: 24px;
   right: 25px;
   align-items: center;
+  gap: 24px;
 }
