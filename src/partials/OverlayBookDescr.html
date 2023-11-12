@@ -1,21 +1,38 @@
+<a href="#modal" class="open-modal">Open modal</a>
 
-<div id="modal" class="modal open">
-    <div class="modal-body">
+<div id="modal" class="modal">
+  <div class="modal-body">
     <div class="modal-content">
-        <a class="modal-close">X</a>
-        <div class="box">
-        <img class="book-cover" src="../img/javascript.svg" alt="" width = "287" height = "408">
+      <svg class="modal-close">
+        <use href="./img/sprite.svg#icon-x-close"></use>
+      </svg>
+
+      <div class="box">
+        <img
+          class="book-cover"
+          src="./img/cover-placeholder.jpg"
+          alt=""
+          width="287"
+          height="408"
+        />
         <div class="text-content">
-        <h2 class="book-title">title</h2>
-        <p class="book-author">author</p>
-        <p class="book-description">In a homage to Louisa May Alcott’s “Little Women,” a young man’s dark past resurfaces as he gets to the know the family of his college sweetheart.</p>
-        <div class="marketplace">
-            <a class="marketplace-logo amazon">amazon</a> 
-            <a class="marketplace-logo apple-books">apple-books</a>
+          <h2 class="book-title">title</h2>
+          <p class="book-author">author</p>
+          <p class="book-description">
+            In a homage to Louisa May Alcott’s “Little Women,” a young man’s
+            dark past resurfaces as he gets to the know the family of his
+            college sweetheart.
+          </p>
+          <div class="marketplace">
+            <a href="" class="marketplace-logo amazon"><img src="./img/salers1.png"></a>
+            <a href="" class="marketplace-logo apple-books"><img src="./img/salers2.png"></a>
+          </div>
         </div>
-        </div>
+      </div>
+      <button class="add-to-list">Add to shopping list</button>
+      <p class="under-btn-text">Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”</p>
     </div>
-        <button class="add-to-list">Add to shopping list</button>
-    </div>
+  </div>
 </div>
-</div>
+<!-- <p class="under-btn-text">Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”</p> -->
+<script src="./js/modalAddRemove.js" type="module"></script>

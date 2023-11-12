@@ -5,14 +5,22 @@
 
 @import url('./category.css');
 
+@import url('./sidebar.css');
+
 /* support */
 @import url('./support.css');
+
+/* shopping-list-card */
+@import url('./shopping-list-card.css');
 
 /* shopping-list */
 @import url('./shopping-list.css');
 
 /* Overlay Book Descr */
-@import url('OverlayBookDescr.css');
+@import url('./OverlayBookDescr.css');
+
+/* books by category */
+@import url('./booksByCategory.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
