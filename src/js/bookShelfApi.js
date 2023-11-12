@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 axios.defaults.baseURL = 'https://books-backend.p.goit.global/';
 // Запит Перелік категорій книг
 export function fetchBooksCategory() {
@@ -27,6 +27,6 @@ export function fetchBookById(bookId) {
   });
 }
 fetchBooksCategory().then(resp => console.log(resp));
-fetchAllTopBooks().then(resp => console.log(resp));
-fetchBooksBySelectedCategory().then(resp => console.log(resp));
-fetchBookById().then(resp => console.log(resp));
+// fetchAllTopBooks().then(resp => console.log(resp));
+// fetchBooksBySelectedCategory().then(resp => console.log(resp));
+// fetchBookById().then(resp => console.log(resp));
