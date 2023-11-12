@@ -1,6 +1,5 @@
 // Theme switcher
-document.addEventListener('DOMContentLoaded', (event) => {
-  
+document.addEventListener('DOMContentLoaded', event => {
   // change the theme
   const toggleSwitch = document.getElementById('theme-toggle');
   toggleSwitch.addEventListener('change', () => {
@@ -10,7 +9,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
       document.body.classList.remove('dark-theme');
     }
   });
-
 
   // change the color of the switch
   const themeToggle = document.getElementById('theme-toggle');
@@ -24,6 +22,25 @@ document.addEventListener('DOMContentLoaded', (event) => {
       themeToggleLabel.classList.add('light-theme');
     }
   });
+
 });
 
 
+
+// Підсвітка поточної сторінки в навігації
+function highlightActiveNavLink() {
+  var currentPath = window.location.pathname;
+
+  console.log(currentPath);
+  var navLinks = document.querySelectorAll('.nav-list li a');
+
+  navLinks.forEach(function(link) {
+    link.parentNode.classList.remove('nav-bar-active');
+
+    if (link.getAttribute('href') === `..${currentPath}` || link.getAttribute('href') === `.${currentPath}`) {
+      link.parentNode.classList.add('nav-bar-active');
+    }
+  });
+}
+
+window.addEventListener('DOMContentLoaded', highlightActiveNavLink)
