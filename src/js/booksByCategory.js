@@ -9,7 +9,7 @@ function createBookCard(book, index) {
   const tabletVisible = index < 3 ? 'tablet-visible' : '';
   const desktopVisible = index < 5 ? 'desktop-visible' : '';
   return `
-    <li class="listener">
+    <li id="book-${book._id}" class="listener">
       <div class="book-category-card ${mobileVisible} ${tabletVisible} ${desktopVisible}">
         <img class="bookByCategory-img" src="${book.book_image}" alt="${book.title}">
         <div class="book-category-details">
