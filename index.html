@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/goit-js-team-project-group3/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookShelf_group3</title>
+    <!-- видалити з 9-14 перед відправкою -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap"
+      rel="stylesheet"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/goit-js-team-project-group3/favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BookShelf_group3</title>
-  <!-- видалити з 9-14 перед відправкою -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap"
-    rel="stylesheet" />
+    
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/modern-normalize@2.0.0/modern-normalize.css"
+    />
+    <script type="module" crossorigin src="/goit-js-team-project-group3/commonHelpers.js"></script>
+    <link rel="modulepreload" crossorigin href="/goit-js-team-project-group3/assets/modulepreload-polyfill-ec808ebb.js">
+    <link rel="modulepreload" crossorigin href="/goit-js-team-project-group3/assets/vendor-26fe51b3.js">
+    <link rel="stylesheet" href="/goit-js-team-project-group3/assets/index-6f92d9fe.css">
+  </head>
 
-  
-  <link rel="stylesheet" href="https://unpkg.com/modern-normalize@2.0.0/modern-normalize.css" />
-  <script type="module" crossorigin src="/goit-js-team-project-group3/commonHelpers.js"></script>
-  <link rel="modulepreload" crossorigin href="/goit-js-team-project-group3/assets/modulepreload-polyfill-ec808ebb.js">
-  <link rel="modulepreload" crossorigin href="/goit-js-team-project-group3/assets/vendor-26fe51b3.js">
-  <link rel="stylesheet" href="/goit-js-team-project-group3/assets/index-624414b2.css">
-</head>
-
-<body>
-  <header>
-    <div class="header-left">
+  <body>
+    <header>
+      <div class="header-left">
   <div class="logo-box">
     <a href="../index.html" class="header-logo-link">
       <svg class="icon-logo" width="109" height="28">
@@ -58,81 +62,11 @@
     </svg>
   </button>
 </div>
-  </header>
-
-  <main>
-    <!-- Hero Dynamic Generated Books Section -->
-    <!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shopping List</title>
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/modern-normalize@2.0.0/modern-normalize.css"
-    />
-    <link rel="stylesheet" href="../css/styles.css" />
-  </head>
-
-  <body>
-    <header>
-      ENOENT: no such file or directory, open '/home/runner/work/goit-js-team-project-group3/goit-js-team-project-group3/src./partials/header.html'
     </header>
 
     <main>
-      <div class="shopping_list-section">
-        <h1 class="shopping_list-title">
-          Shopping <span class="violet">List</span>
-        </h1>
-        <div class="shopping_list-wrapper js-shopping_list">
-          <div class="shopping_list-content">
-            <p class="shopping_list-empty-text">
-              This page is empty, add some books and proceed to order.
-            </p>
-            <img
-              class="book-column-img"
-              srcset="
-                ../img/book-column@1x.png 1x,
-                ../img/book-column@2x.png 2x
-              "
-              src="../img/book-column@1x.png"
-              alt="book-column"
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </div>
-    </main>
-
-    <footer></footer>
-
-    <script type="module" src="./main.js"></script>
-  </body>
-</html>
- -->
-
-    <!-- Sidebar -->
-    <!-- <style>
-      @media screen and (min-width: 768px) {
-        aside {
-          display: flex;
-          flex-direction: row;
-          gap: 32px;
-        }
-      }
-
-      @media screen and (min-width: 1158px) {
-        aside {
-          flex-direction: column;
-          width: 25%;
-          float: left;
-        }
-      }
-    </style> -->
-    <aside>
-      <ul class="category-list">
+      <aside>
+        <ul class="category-list">
   <li class="category-list-item">
     <button class="category-btn category-btn-active" type="button">
       All categories
@@ -141,8 +75,8 @@
   <div class="category-list-container category-list"></div>
 </ul>
 
-      <!-- Support -->
-      <div class="support-container">
+        <!-- Support -->
+        <div class="support-container">
   <div class="support-header">
     <h3 class="suppot-h3">Support Ukraine</h3>
     <svg class="support-logo" width="20" height="32">
@@ -153,11 +87,10 @@
   <button class="support-slider-button"></button>
 </div>
 
-    </aside>
+      </aside>
 
-
-    <!-- Overlay Book Descr -->
-    <a href="#modal" class="open-modal">Open modal</a>
+      <!-- Overlay Book Descr -->
+      <a href="#modal" class="open-modal">Open modal</a>
 
 <div id="modal" class="modal">
   <div class="modal-body">
@@ -197,36 +130,28 @@
 
 
 
-    <!-- Books by category maybe hero -->
-    
-<div class="best-sellers-container">
-  <ul class="best-sellers-list">
-
-    
-
-  </ul>
+      <!-- Books by category maybe hero -->
+      <div class="best-sellers-container">
+  <h1 class="bestselllersTitle">
+    Best Sellers <span class="titleSpan">Books</span>
+  </h1>
+  <ul class="best-sellers-list"></ul>
 </div>
 
-    <!-- Footer -->
-    <load src="" />
 
-    <!-- Modal Menu -->
-    <load src="" />
-  </main>
+      <!-- Footer -->
+      <load src="" />
 
-  <footer></footer>
+      <!-- Modal Menu -->
+      <load src="" />
+    </main>
 
-  //
-  //
-  //<script src="./js/header.js"></script>
-  
-</body>
+    <footer></footer>
 
-    <!-- <script type="module" src="./main.js"></script> -->
+    
     
     
     <script src="./js/header.js"></script>
     <script src="./js/support.js"></script>
   </body>
 </html>
-
