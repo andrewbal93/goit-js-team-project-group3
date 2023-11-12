@@ -63,7 +63,7 @@ function handlerSupport() {
         console.log(foundationList.scrollTop + foundationList.offsetHeight);
         console.log(foundationList.scrollHeight);
         if (foundationList.scrollTop + foundationList.offsetHeight >= foundationList.scrollHeight) {
-            supportBtn.innerHTML = ``
+            supportBtn.innerHTML = ``;
             up = true;
             return;
         }
@@ -72,7 +72,7 @@ function handlerSupport() {
     if (up) {
         foundationList.scrollBy(0, -60);
         if (foundationList.scrollTop === 0) {
-            supportBtn.innerHTML = ``
+            supportBtn.innerHTML = ``;
             up = false; 
             return;
     }

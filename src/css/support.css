@@ -27,7 +27,7 @@
 }
 .support-header {
   height: 32px;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   font-style: normal;
   gap: 12px;
