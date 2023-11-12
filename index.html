@@ -1,36 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/goit-js-team-project-group3/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BookShelf_group3</title>
-    <!-- видалити з 9-14 перед відправкою -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap"
-      rel="stylesheet"
-    />
 
-    
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/modern-normalize@2.0.0/modern-normalize.css"
-    />
-    <script type="module" crossorigin src="/goit-js-team-project-group3/commonHelpers.js"></script>
-    <link rel="modulepreload" crossorigin href="/goit-js-team-project-group3/assets/modulepreload-polyfill-ec808ebb.js">
-    <link rel="modulepreload" crossorigin href="/goit-js-team-project-group3/assets/vendor-26fe51b3.js">
-    <link rel="stylesheet" href="/goit-js-team-project-group3/assets/index-6c860e9d.css">
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/goit-js-team-project-group3/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BookShelf_group3</title>
+  <!-- видалити з 9-14 перед відправкою -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap"
+    rel="stylesheet" />
 
-  <body>
-    <header>
-      <div class="header-left">
+  
+  <link rel="stylesheet" href="https://unpkg.com/modern-normalize@2.0.0/modern-normalize.css" />
+  <script type="module" crossorigin src="/goit-js-team-project-group3/commonHelpers.js"></script>
+  <link rel="modulepreload" crossorigin href="/goit-js-team-project-group3/assets/modulepreload-polyfill-ec808ebb.js">
+  <link rel="modulepreload" crossorigin href="/goit-js-team-project-group3/assets/vendor-26fe51b3.js">
+  <link rel="stylesheet" href="/goit-js-team-project-group3/assets/index-0d657883.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-left">
   <div class="logo-box">
     <a href="../index.html" class="header-logo-link">
       <svg class="icon-logo" width="109" height="28">
-        <use href="../img/sprite.svg#icon-logo"></use>
+        <use href="/goit-js-team-project-group3/assets/sprite-4f9873df.svg#icon-logo"></use>
       </svg>
     </a>
   </div>
@@ -41,10 +37,9 @@
         <a href="../index.html" class="home">HOME</a>
       </li>
       <li>
-        <a href="./partials/shoping-list.html" class="shopping-list"
-          >SHOPPING LIST
+        <a href="./partials/shoping-list.html" class="shopping-list">SHOPPING LIST
           <svg class="icon-shopping-list" width="20" height="20">
-            <use xlink:href="/goit-js-team-project-group3/assets/sprite-a4cb3e40.svg#icon-shoping-list"></use>
+            <use xlink:href="/goit-js-team-project-group3/assets/sprite-4f9873df.svg#icon-shoping-list"></use>
           </svg>
         </a>
       </li>
@@ -59,16 +54,15 @@
   </div>
   <button class="menu-toggle">
     <svg class="icon-burger-menu" width="28" height="28">
-      <use xlink:href="/goit-js-team-project-group3/assets/sprite-a4cb3e40.svg#icon-align-left1"></use>
+      <use xlink:href="/goit-js-team-project-group3/assets/sprite-4f9873df.svg#icon-align-left1"></use>
     </svg>
   </button>
 </div>
+  </header>
 
-    </header>
-
-    <main>
-      <!-- Hero Dynamic Generated Books Section -->
-      <!-- <!DOCTYPE html>
+  <main>
+    <!-- Hero Dynamic Generated Books Section -->
+    <!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -119,9 +113,9 @@
 </html>
  -->
 
-      <!-- Sidebar -->
+    <!-- Sidebar -->
 
-      <ul class="category-list">
+    <ul class="category-list">
   <li class="category-list-item">
     <button class="category-btn category-btn-active" type="button">
       All categories
@@ -173,8 +167,8 @@
 </ul>
 
 
-      <!-- Support -->
-      <div class="support-container">
+    <!-- Support -->
+    <div class="support-container">
   <div class="support-header">
     <h3 class="suppot-h3">Support Ukraine</h3>
     <svg class="support-logo" width="20" height="32">
@@ -190,14 +184,14 @@
 </div>
 
 
-      <!-- Overlay Book Descr -->
-      <a href="#modal" class="open-modal">Open modal</a>
+    <!-- Overlay Book Descr -->
+    <a href="#modal" class="open-modal">Open modal</a>
 
 <div id="modal" class="modal">
   <div class="modal-body">
     <div class="modal-content">
       <svg class="modal-close">
-        <use href="/goit-js-team-project-group3/assets/sprite-a4cb3e40.svg#icon-x-close"></use>
+        <use href="/goit-js-team-project-group3/assets/sprite-4f9873df.svg#icon-x-close"></use>
       </svg>
 
       <div class="box">
@@ -230,17 +224,78 @@
 <!-- <p class="under-btn-text">Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”</p> -->
 
 
-      <!-- Footer -->
-      <load src="" />
 
-      <!-- Modal Menu -->
-      <load src="" />
-    </main>
+    <!-- Books by category maybe hero -->
+    <div class="book-category">
+  <div class="category-title">
+    <span>COMBINED PRINT & E-BOOK FICTION</span>
+  </div>
+  <div class="books">
+    <ul class="books-category-list">
 
-    <footer></footer>
+      <li>
+        <div class="book-category-card">
+          <img class="bookByCategory-cover" src="/goit-js-team-project-group3/assets/1-9218b0f2.jpg" alt="Назва книги">
+          <div class="book-category-details">
+            <h3 class="book-category-title">Назва книги</h3>
+            <p class="book-category-author">Автор книги</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="book-category-card">
+          <img class="bookByCategory-cover" src="/goit-js-team-project-group3/assets/1-9218b0f2.jpg" alt="Назва книги">
+          <div class="book-category-details">
+            <h3 class="book-category-title">Назва книги</h3>
+            <p class="book-category-author">Автор книги</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="book-category-card">
+          <img class="bookByCategory-cover" src="/goit-js-team-project-group3/assets/1-9218b0f2.jpg" alt="Назва книги">
+          <div class="book-category-details">
+            <h3 class="book-category-title">Назва книги</h3>
+            <p class="book-category-author">Автор книги</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="book-category-card">
+          <img class="bookByCategory-cover" src="/goit-js-team-project-group3/assets/1-9218b0f2.jpg" alt="Назва книги">
+          <div class="book-category-details">
+            <h3 class="book-category-title">Назва книги</h3>
+            <p class="book-category-author">Автор книги</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="book-category-card">
+          <img class="bookByCategory-cover" src="/goit-js-team-project-group3/assets/1-9218b0f2.jpg" alt="Назва книги">
+          <div class="book-category-details">
+            <h3 class="book-category-title">Назва книги</h3>
+            <p class="book-category-author">Автор книги</p>
+          </div>
+        </div>
+      </li>
 
-    <!-- <script type="module" src="./main.js"></script> -->
-    
-    <script src="./js/header.js"></script>
-  </body>
+    </ul>
+  </div>
+  <button class="see-more">SEE MORE</button>
+</div>
+
+    <!-- Footer -->
+    <load src="" />
+
+    <!-- Modal Menu -->
+    <load src="" />
+  </main>
+
+  <footer></footer>
+  
+  // 
+  // <script src="./js/header.js"></script>
+  
+</body>
+
 </html>
