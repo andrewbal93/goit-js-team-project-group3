@@ -4,12 +4,13 @@ import{fetchBookById, fetchBooksCategory, fetchAllTopBooks, fetchBooksBySelected
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    const openModalLink = document.querySelector('listener');
+    const openModalLink = document.querySelector('.listener');
     const modal = document.querySelector('.modal');
     const closeModalButton = modal.querySelector('.modal-close');
     const addToShoppingListButton = modal.querySelector('.add-to-list');
     const backdrop = modal.querySelector('.modal-body');
     const underButtonText = modal.querySelector('.under-btn-text');
+    
     
     // Open modal
     openModalLink.addEventListener('click', function () {
@@ -73,3 +74,44 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+
+
+function createMarkup({ _id, list_name, date, age_group, amazon_product_url, author, book_image }) {
+    // Тут ви можете використовувати отримані значення
+    // для виведення вмісту модального вікна
+    const markup = `
+      <div class="modal-content">
+        <svg class="modal-close">
+          <use href="./img/sprite.svg#icon-x-close"></use>
+        </svg>
+  
+        <div class="box">
+          <img
+            class="book-cover"
+            src="${book_image}"
+            alt=""
+            width="287"
+            height="408"
+          />
+          <div class="text-content">
+            <h2 class="book-title">${title}</h2>
+            <p class="book-author">${author}</p>
+            <p class="book-description">
+              ${description}
+            </p>
+            <div class="marketplace">
+              <a href="${amazon_product_url}" class="marketplace-logo amazon"><img src="./img/salers1.png"></a>
+              <!-- Додайте посилання та логотип для інших майданчиків -->
+            </div>
+          </div>
+        </div>
+        <button class="add-to-list">Add to shopping list</button>
+        <p class="under-btn-text">Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”</p>
+      </div>
+    `;
+  
+    // Тут ви можете використовувати `markup` як вам потрібно
+    // наприклад, вставити його в DOM
+    document.querySelector('.modal-body').innerHTML = markup;
+  }
+  
