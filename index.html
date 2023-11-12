@@ -1,32 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/goit-js-team-project-group3/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BookShelf_group3</title>
-    <!-- видалити з 9-14 перед відправкою -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap"
-      rel="stylesheet"
-    />
 
-    
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/modern-normalize@2.0.0/modern-normalize.css"
-    />
-    <script type="module" crossorigin src="/goit-js-team-project-group3/commonHelpers.js"></script>
-    <link rel="modulepreload" crossorigin href="/goit-js-team-project-group3/assets/modulepreload-polyfill-ec808ebb.js">
-    <link rel="modulepreload" crossorigin href="/goit-js-team-project-group3/assets/vendor-26fe51b3.js">
-    <link rel="stylesheet" href="/goit-js-team-project-group3/assets/index-e62e9da4.css">
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/goit-js-team-project-group3/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BookShelf_group3</title>
+  <!-- видалити з 9-14 перед відправкою -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap"
+    rel="stylesheet" />
 
-  <body>
-    <header>
-      <div class="header-left">
+  
+  <link rel="stylesheet" href="https://unpkg.com/modern-normalize@2.0.0/modern-normalize.css" />
+  <script type="module" crossorigin src="/goit-js-team-project-group3/commonHelpers.js"></script>
+  <link rel="modulepreload" crossorigin href="/goit-js-team-project-group3/assets/modulepreload-polyfill-ec808ebb.js">
+  <link rel="modulepreload" crossorigin href="/goit-js-team-project-group3/assets/vendor-26fe51b3.js">
+  <link rel="stylesheet" href="/goit-js-team-project-group3/assets/index-edf44bc7.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-left">
   <div class="logo-box">
     <a href="../index.html" class="header-logo-link">
       <svg class="icon-logo" width="109" height="28">
@@ -43,7 +39,7 @@
       <li>
         <a href="./partials/shoping-list.html" class="shopping-list">SHOPPING LIST
           <svg class="icon-shopping-list" width="20" height="20">
-            <use xlink:href="/goit-js-team-project-group3/assets/sprite-4f9873df.svg#icon-shoping-list"></use>
+            <use xlink:href="../img/sprite.svg#icon-shoping-list"></use>
           </svg>
         </a>
       </li>
@@ -62,11 +58,11 @@
     </svg>
   </button>
 </div>
-    </header>
+  </header>
 
-    <main>
-      <!-- Hero Dynamic Generated Books Section -->
-      <!-- <!DOCTYPE html>
+  <main>
+    <!-- Hero Dynamic Generated Books Section -->
+    <!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -117,8 +113,25 @@
 </html>
  -->
 
-      <!-- Sidebar -->
+    <!-- Sidebar -->
+    <style>
+      @media screen and (min-width: 768px) {
+        aside {
+          display: flex;
+          flex-direction: row;
+          gap: 32px;
+        }
+      }
 
+      @media screen and (min-width: 1158px) {
+        aside {
+          flex-direction: column;
+          width: 25%;
+          float: left;
+        }
+      }
+    </style>
+    <aside>
       <ul class="category-list">
   <li class="category-list-item">
     <button class="category-btn category-btn-active" type="button">
@@ -170,7 +183,6 @@
   </li>
 </ul>
 
-
       <!-- Support -->
       <div class="support-container">
   <div class="support-header">
@@ -183,9 +195,11 @@
   <button class="support-slider-button"></button>
 </div>
 
+    </aside>
 
-      <!-- Overlay Book Descr -->
-      <a href="#modal" class="open-modal">Open modal</a>
+
+    <!-- Overlay Book Descr -->
+    <a href="#modal" class="open-modal">Open modal</a>
 
 <div id="modal" class="modal">
   <div class="modal-body">
@@ -224,18 +238,30 @@
 <!-- <p class="under-btn-text">Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”</p> -->
 
 
-      <!-- Footer -->
-      <load src="" />
 
-      <!-- Modal Menu -->
-      <load src="" />
-    </main>
-
-    <footer></footer>
-
-    <!-- <script type="module" src="./main.js"></script> -->
+    <!-- Books by category maybe hero -->
     
-    <script src="./js/header.js"></script>
-    <script src="./js/support.js"></script>
-  </body>
+<div class="best-sellers-container">
+  <ul class="best-sellers-list">
+
+    
+
+  </ul>
+</div>
+
+    <!-- Footer -->
+    <load src="" />
+
+    <!-- Modal Menu -->
+    <load src="" />
+  </main>
+
+  <footer></footer>
+
+  //
+  //
+  //<script src="./js/header.js"></script>
+  
+</body>
+
 </html>
