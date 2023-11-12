@@ -26,11 +26,29 @@
     <!-- <load src="./partials/shoping-list.html" /> -->
 
     <!-- Sidebar -->
+    <style>
+      @media screen and (min-width: 768px) {
+        aside {
+          display: flex;
+          flex-direction: row;
+          gap: 32px;
+        }
+      }
 
-    <load src="./partials/category.html" />
+      @media screen and (min-width: 1158px) {
+        aside {
+          flex-direction: column;
+          width: 25%;
+          float: left;
+        }
+      }
+    </style>
+    <aside>
+      <load src="./partials/category.html" />
+      <!-- Support -->
+      <load src="./partials/support.html" />
+    </aside>
 
-    <!-- Support -->
-    <load src="./partials/support.html" />
 
     <!-- Overlay Book Descr -->
     <load src="./partials/OverlayBookDescr.html" />
@@ -46,9 +64,10 @@
   </main>
 
   <footer></footer>
-  
-  // <script type="module" src="./js/bookShelfApi.js"></script>
-  // <script src="./js/header.js"></script>
+
+  //<script type="module" src="./js/bookShelfApi.js"></script>
+  //<script type="module" src="./js/booksByCategory.js"></script>
+  //<script src="./js/header.js"></script>
   <script type="module" src="./main.js"></script>
 </body>
 
