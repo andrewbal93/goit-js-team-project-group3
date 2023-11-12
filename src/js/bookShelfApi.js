@@ -1,8 +1,8 @@
 import axios from "axios";
 axios.defaults.baseURL = 'https://books-backend.p.goit.global/';
 // Запит Перелік категорій книг
-export function fetchBooksCategory() {
-  return axios.get('/books/category-list').then(resp => {
+export async function fetchBooksCategory() {
+  return await axios.get('/books/category-list').then(resp => {
     return resp.data;
   });
 }
