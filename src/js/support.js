@@ -57,13 +57,12 @@ foundationList.insertAdjacentHTML("afterbegin", Murkup);
 const supportBtn = document.querySelector(".support-slider-button");
 supportBtn.addEventListener('click', handlerSupport);
 let up = false;
+ supportBtn.innerHTML = `  <svg with="20" height="20"><use href="../img/sprite.svg#icon-down-arrow"></use></svg>`;
 function handlerSupport() {
     if (!up) {
         foundationList.scrollBy(0, 60); 
-        console.log(foundationList.scrollTop + foundationList.offsetHeight);
-        console.log(foundationList.scrollHeight);
         if (foundationList.scrollTop + foundationList.offsetHeight >= foundationList.scrollHeight) {
-            supportBtn.innerHTML = ``;
+            supportBtn.innerHTML = `  <svg with="20" height="20"><use href="../img/sprite.svg#icon-up-arrow"></use></svg>`;
             up = true;
             return;
         }
@@ -72,7 +71,7 @@ function handlerSupport() {
     if (up) {
         foundationList.scrollBy(0, -60);
         if (foundationList.scrollTop === 0) {
-            supportBtn.innerHTML = ``;
+            supportBtn.innerHTML = `  <svg with="20" height="20"><use href="../img/sprite.svg#icon-down-arrow"></use></svg>`;
             up = false; 
             return;
     }
