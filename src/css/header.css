@@ -184,6 +184,10 @@ display: flex;
   background-image: linear-gradient(180deg, #4F2EE8 0%, #686868 100%);
 }
 
+.dark-theme .icon-logo{
+  fill: #f3f3f3;
+}
+
 .dark-theme .icon-burger-menu{
   stroke: #f3f3f3;
 }
