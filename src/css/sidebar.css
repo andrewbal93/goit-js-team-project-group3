@@ -1,0 +1,19 @@
+aside {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  aside {
+    flex-direction: row;
+    gap: 32px;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  aside {
+    flex-direction: column;
+    width: 25%;
+    float: left;
+  }
+}

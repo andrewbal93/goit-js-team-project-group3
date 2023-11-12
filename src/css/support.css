@@ -3,7 +3,7 @@
   font-family: DM Sans;
   display: flex;
   flex-direction: column;
-  width: 335px;
+  max-width: 335px;
   height: 460px;
   border-radius: 16px;
   color: #fff;
