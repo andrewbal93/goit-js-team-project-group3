@@ -37,12 +37,13 @@ export function fetchBooksBySelectedCategory(selectedCategory) {
 }
 // Запит Детальна інформація про книгу по id
 export function fetchBookById(bookId) {
-  return axios.get(`/books/bookId?bookId=${bookId}`).then(resp => {
+  return axios.get(`/books/${bookId}`).then(resp => {
     return resp.data;
   });
 }
 
-// fetchBooksCategory().then(resp => console.log(resp));
+fetchBooksCategory().then(resp => console.log(resp));
 // fetchAllTopBooks().then(resp => console.log(resp));
 // fetchBooksBySelectedCategory().then(resp => console.log(resp));
-// fetchBookById().then(resp => console.log(resp));
+// fetchBookById("643282b1e85766588626a0dc").then(resp => console.log(resp));
+// console.log("hello");

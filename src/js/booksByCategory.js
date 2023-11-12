@@ -86,7 +86,7 @@ function fetchAndDisplayCategories() {
   fetchBooksCategory()
     .then(categories => {
       // Обмеження кількості категорій до 5
-      categories.slice(0, 5).forEach(category => {
+      categories.forEach(category => {
         const categoryContainer = createCategoryContainer(category.list_name);
         bestSellersList.appendChild(categoryContainer)
       });

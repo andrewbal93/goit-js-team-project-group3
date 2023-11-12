@@ -5,7 +5,15 @@
   overflow-x: hidden;
 }
 
-.category-title{
+.bestselllersTitle {
+  margin-bottom: 40px;
+}
+
+.titleSpan {
+  color: #4f2ee8;
+}
+
+.category-title {
   margin-bottom: 18px;
 }
 
@@ -99,7 +107,6 @@
   letter-spacing: -0.48px;
 }
 
-
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!  Телефон*/
 @media (max-width: 767px) {
   .book-category {
@@ -116,7 +123,6 @@
   }
 }
 
-
 /* !!!!!!!!!!!!!!!!!!!!!!!!! Планшет */
 
 @media screen and (min-width: 768px) and (max-width: 1157px) {
@@ -125,12 +131,11 @@
   }
 }
 
-
 @media screen and (min-width: 768px) {
-  .book-category{
+  .book-category {
     margin: 0;
   }
-  
+
   .bookByCategory-img {
     height: 316px;
   }
@@ -163,7 +168,6 @@
     display: flex;
   }
 }
-
 
 /* !!!!!!!!!!!!!!!!!!!!! Ноутбук */
 @media screen and (min-width: 1158px) {
