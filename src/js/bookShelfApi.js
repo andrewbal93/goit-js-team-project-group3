@@ -42,6 +42,7 @@ export function fetchBookById(bookId) {
     return resp.data;
   });
 }
+
 // fetchBooksCategory().then(resp => console.log(resp));
 fetchAllTopBooks().then(resp => console.log(resp));
 // fetchBooksBySelectedCategory().then(resp => console.log(resp));
