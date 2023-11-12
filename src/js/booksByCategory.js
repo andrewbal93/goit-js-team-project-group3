@@ -1,7 +1,7 @@
 import {
   fetchBooksCategory,
-  fetchBooksBySelectedCategory,
-} from './bookShelfApi'; // Замініть на вірний шлях до вашого файлу з функціями
+  fetchAllTopBooks,
+} from './bookShelfApi';
 
 // Функція для створення HTML для карточки книги
 function createBookCard(book, index) {
@@ -9,7 +9,7 @@ function createBookCard(book, index) {
   const tabletVisible = index < 3 ? 'tablet-visible' : '';
   const desktopVisible = index < 5 ? 'desktop-visible' : '';
   return `
-    <li>
+    <li class="listener">
       <div class="book-category-card ${mobileVisible} ${tabletVisible} ${desktopVisible}">
         <img class="bookByCategory-img" src="${book.book_image}" alt="${book.title}">
         <div class="book-category-details">
@@ -20,7 +20,6 @@ function createBookCard(book, index) {
     </li>
   `;
 }
-
 
 // Функція для завантаження книг у відповідну категорію
 function loadBooks(categoryName, books) {
@@ -33,14 +32,11 @@ function loadBooks(categoryName, books) {
 
 // Функція для отримання та відображення книг по категоріям
 function fetchAndDisplayBooks() {
-  fetchBooksCategory()
+
+  fetchAllTopBooks()
     .then(categories => {
       categories.forEach(category => {
-        fetchBooksBySelectedCategory(category.list_name)
-          .then(books => {
-            loadBooks(category.list_name, books);
-          })
-          .catch(error => console.error(`Помилка при завантаженні книг для категорії ${category.list_name}:`, error));
+        loadBooks(category.list_name, category.books);
       });
     })
     .catch(error => console.error('Помилка при завантаженні категорій книг:', error));
