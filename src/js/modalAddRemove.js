@@ -1,10 +1,10 @@
 
-// import{fetchBookById, fetchBooksCategory, fetchAllTopBooks, fetchBooksBySelectedCategory} from './request';
+import{fetchBookById, fetchBooksCategory, fetchAllTopBooks, fetchBooksBySelectedCategory} from './bookShelfApi';
 
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    const openModalLink = document.querySelector('.open-modal');
+    const openModalLink = document.querySelector('listener');
     const modal = document.querySelector('.modal');
     const closeModalButton = modal.querySelector('.modal-close');
     const addToShoppingListButton = modal.querySelector('.add-to-list');
