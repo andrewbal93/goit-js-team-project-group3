@@ -1,90 +1,144 @@
-import { fetchBookById, fetchBooksBySelectedCategory } from './bookShelfApi';
 
-document.addEventListener('DOMContentLoaded', function () {
-  const openModalLinks = document.querySelectorAll('.listener');
-  const modal = document.getElementById('modal');
+import{fetchBookById, fetchBooksCategory, fetchAllTopBooks, fetchBooksBySelectedCategory} from './bookShelfApi';
+
+
+
+// document.addEventListener('DOMContentLoaded', function () {
+//     const openModalLink = document.querySelector('.listener');
+    
+//     
+//     
+//     
+//    
+    
+    
+//     // Open modal
+//     openModalLink.addEventListener('click', function () {
+//         modal.classList.add('open');
+//         document.body.style.overflow = 'hidden'; // Заборона прокрутки фону
+//     });
+
+//     // Close modal
+//     const closeModal = function () {
+//         modal.classList.remove('open');
+//         document.body.style.overflow = ''; // Відновлення прокрутки фону
+//         // underButtonText.style.display = 'none';
+//     };
+
+//     closeModalButton.addEventListener('click', closeModal);
+//     backdrop.addEventListener('click', closeModal);
+
+//     document.addEventListener('keydown', function (event) {
+//         if (event.key === 'Escape') {
+//             closeModal();
+//         }
+//     });
+
+//     // Add to / Remove from shopping list
+//     addToShoppingListButton.addEventListener('click', function (event) {
+//         event.stopPropagation();
+//         // Оновлюємо інформацію про список в localStorage
+//         let shoppingList = JSON.parse(localStorage.getItem('shoppingList')) || [];
+//         const bookTitle = modal.querySelector('.book-title').textContent;
+
+//         if (shoppingList.includes(bookTitle)) {
+//             shoppingList = shoppingList.filter(item => item !== bookTitle);
+//         } else {
+//             shoppingList.push(bookTitle);
+//         }
+
+//         localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
+
+//         // Оновлюємо текст кнопки в модалці
+//         const isBookInList = updateShoppingListButton(shoppingList);
+//         underButtonText.style.display = isBookInList ? 'block' : 'none';
+//     });
+
+//     // Функція для оновлення тексту кнопки відповідно до стану списку
+//     function updateShoppingListButton(shoppingList) {
+//         const bookTitle = modal.querySelector('.book-title').textContent;
+//         const isBookInList = shoppingList.includes(bookTitle);
+
+//         if (isBookInList) {
+//             addToShoppingListButton.textContent = 'Remove from the shopping list';
+//         } else {
+//             addToShoppingListButton.textContent = 'Add to shopping list';
+//         }
+//         return isBookInList;
+//     }
+
+//     // Ініціалізація тексту кнопки при завантаженні сторінки
+//     const initialShoppingList = JSON.parse(localStorage.getItem('shoppingList')) || [];
+//     updateShoppingListButton(initialShoppingList);
+//     // underButtonText.style.display = 'none';
+// });
+
+ // Open modal
+  window.openModal = openModal;
+  const modal =document.querySelector('.modal');
+  
+  async function openModal() {
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  }
+
+// Close modal
+  
+  const backdrop = modal.querySelector('.modal-body');
   const closeModalButton = modal.querySelector('.modal-close');
-  const addToShoppingListButton = modal.querySelector('.add-to-list');
-  const underButtonText = modal.querySelector('.under-btn-text');
+  
+    const closeModal = function () {
+        modal.classList.remove('open');
+        document.body.style.overflow = ''; // Відновлення прокрутки фону
+        // underButtonText.style.display = 'none';
+    };
 
-  function openModal(book) {
-    createMarkup(book);
-    updateButtonText();
-    modal.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
+    closeModalButton.addEventListener('click', closeModal);
+    backdrop.addEventListener('click', closeModal);
 
-  openModalLinks.forEach((link) => {
-    link.addEventListener('click', function () {
-      const bookId = link.id;
-      fetchBookById(bookId)
-        .then((book) => openModal(book))
-        .catch((error) => console.error('Error fetching book data:', error));
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+            closeModal();
+        }
     });
-  });
 
-  function closeModal() {
-    modal.classList.remove('open');
-    document.body.style.overflow = '';
-  }
+     // Add to / Remove from shopping list
+    const addToShoppingListButton = modal.querySelector('.add-to-list');
+     const underButtonText = modal.querySelector('.under-btn-text');
+    
+         addToShoppingListButton.addEventListener('click', function (event) {
+        event.stopPropagation();
+        // Оновлюємо інформацію про список в localStorage
+        let shoppingList = JSON.parse(localStorage.getItem('shoppingList')) || [];
+        const bookTitle = modal.querySelector('.book-title').textContent;
 
-  closeModalButton.addEventListener('click', closeModal);
-  document.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape') {
-      closeModal();
+        if (shoppingList.includes(bookTitle)) {
+            shoppingList = shoppingList.filter(item => item !== bookTitle);
+        } else {
+            shoppingList.push(bookTitle);
+        }
+
+        localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
+
+        // Оновлюємо текст кнопки в модалці
+        const isBookInList = updateShoppingListButton(shoppingList);
+        underButtonText.style.display = isBookInList ? 'block' : 'none';
+    });
+
+    // Функція для оновлення тексту кнопки відповідно до стану списку
+    function updateShoppingListButton(shoppingList) {
+        const bookTitle = modal.querySelector('.book-title').textContent;
+        const isBookInList = shoppingList.includes(bookTitle);
+
+        if (isBookInList) {
+            addToShoppingListButton.textContent = 'Remove from the shopping list';
+        } else {
+            addToShoppingListButton.textContent = 'Add to shopping list';
+        }
+        return isBookInList;
     }
-  });
 
-  addToShoppingListButton.addEventListener('click', function (event) {
-    event.stopPropagation();
-    let shoppingList = JSON.parse(localStorage.getItem('shoppingList')) || [];
-    const bookTitle = modal.querySelector('.book-title').textContent;
-
-    if (shoppingList.includes(bookTitle)) {
-      shoppingList = shoppingList.filter(item => item !== bookTitle);
-    } else {
-      shoppingList.push(bookTitle);
-    }
-
-    localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
-    const isBookInList = updateShoppingListButton(shoppingList);
-    underButtonText.style.display = isBookInList ? 'block' : 'none';
-  });
-
-  function updateShoppingListButton(shoppingList) {
-    const bookTitle = modal.querySelector('.book-title').textContent;
-    const isBookInList = shoppingList.includes(bookTitle);
-
-    if (isBookInList) {
-      addToShoppingListButton.textContent = 'Remove from the shopping list';
-    } else {
-      addToShoppingListButton.textContent = 'Add to shopping list';
-    }
-    return isBookInList;
-  }
-
-  const initialShoppingList = JSON.parse(localStorage.getItem('shoppingList')) || [];
-  updateShoppingListButton(initialShoppingList);
-});
-
-function createMarkup(book) {
-  const modalContent = document.querySelector('.modal-content');
-  modalContent.querySelector('.book-cover').src = book.book_image;
-  modalContent.querySelector('.book-title').textContent = book.title;
-  modalContent.querySelector('.book-author').textContent = book.author;
-  modalContent.querySelector('.book-description').textContent = book.description;
-
-  // Додайте посилання на торгівельні майданчики тут
-  const marketplaceDiv = modalContent.querySelector('.marketplace');
-  marketplaceDiv.innerHTML = ''; // Очистіть попередні посилання
-  book.marketplaces.forEach(marketplace => {
-    const marketplaceLink = document.createElement('a');
-    marketplaceLink.href = marketplace.url;
-    marketplaceLink.className = `marketplace-logo ${marketplace.name.toLowerCase()}`;
-    marketplaceLink.innerHTML = `<img src="${marketplace.logo}" alt="${marketplace.name}">`;
-    marketplaceDiv.appendChild(marketplaceLink);
-  });
-}
-function updateButtonText() {
-    // Додайте ваш код оновлення тексту кнопки тут
-  }
+    // Ініціалізація тексту кнопки при завантаженні сторінки
+    const initialShoppingList = JSON.parse(localStorage.getItem('shoppingList')) || [];
+    updateShoppingListButton(initialShoppingList);
+    // underButtonText.style.display = 'none';
