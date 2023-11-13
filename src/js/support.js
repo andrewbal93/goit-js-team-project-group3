@@ -1,4 +1,4 @@
-console.log("test");
+// console.log("test");
 const foundationList = document.querySelector(".foundations-list");
 
 const foundations = [
