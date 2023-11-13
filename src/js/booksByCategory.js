@@ -10,8 +10,10 @@ import {
   const tabletVisible = index < 3 ? 'tablet-visible' : '';
   const desktopVisible = index < 5 ? 'desktop-visible' : '';
   return `
+
   <li id="${book._id}" class="listener" onclick="openModal('${book._id}')">
         <div class="book-category-card ${mobileVisible} ${tabletVisible} ${desktopVisible}">
+
         <img class="bookByCategory-img" src="${book.book_image}" alt="${book.title}">
         <div class="book-category-details">
           <h3 class="book-category-title">${book.title}</h3>
