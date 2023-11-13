@@ -9,12 +9,50 @@
       rel="stylesheet"
       href="https://unpkg.com/modern-normalize@2.0.0/modern-normalize.css"
     />
-    <link rel="stylesheet" href="../css/styles.css" />
+    
+    <link rel="stylesheet" href="/goit-js-team-project-group3/assets/styles-ee5bcfd4.css">
   </head>
 
   <body>
     <header>
-      ENOENT: no such file or directory, open '/home/runner/work/goit-js-team-project-group3/goit-js-team-project-group3/src/header.html'
+      <div class="header-left">
+  <div class="logo-box">
+    <a href="../index.html" class="header-logo-link">
+      <svg class="icon-logo" width="109" height="28">
+        <use href="../img/sprite.svg#icon-logo"></use>
+      </svg>
+    </a>
+  </div>
+
+  <nav class="navbar">
+    <ul class="nav-list">
+      <li class="nav-bar-active">
+        <a href="./index.html" class="home">HOME</a>
+      </li>
+      <li>
+        <a href="./shoping-list.html" class="shopping-list"
+          >SHOPPING LIST
+          <svg class="icon-shopping-list" width="20" height="20">
+            <use xlink:href="../img/sprite.svg#icon-shoping-list"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<div class="header-right">
+  <div id="theme-switcher">
+    <input type="checkbox" id="theme-toggle" />
+    <label for="theme-toggle" id="theme-toggle-label"></label>
+  </div>
+  <button class="menu-toggle">
+    <svg class="icon-burger-menu" width="28" height="28">
+      <use xlink:href="../img/sprite.svg#icon-align-left1"></use>
+    </svg>
+  </button>
+</div>
+
     </header>
 
     <main>
@@ -29,11 +67,8 @@
             </p>
             <img
               class="book-column-img"
-              srcset="
-                ../img/book-column@1x.png 1x,
-                ../img/book-column@2x.png 2x
-              "
-              src="../img/book-column@1x.png"
+              srcset="/goit-js-team-project-group3/assets/book-column@1x-a278a77f.png 1x, /goit-js-team-project-group3/assets/book-column@2x-1268a808.png 2x"
+              src="/goit-js-team-project-group3/assets/book-column@1x-a278a77f.png"
               alt="book-column"
               loading="lazy"
             />
@@ -43,6 +78,6 @@
     </main>
 
     <footer></footer>
-    <script src="../js/header.js"></script>
+    <script src="./js/header.js"></script>
   </body>
 </html>
