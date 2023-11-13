@@ -1,17 +1,30 @@
+.shopping-list {
+  justify-content: center;
+}
+
 .shopping-list-card {
   position: relative;
   display: flex;
-  width: 996px;
-  height: 213px;
-  padding: 24px;
-  align-items: flex-start;
 
+  width: 335px;
+  height: 170px;
+  padding: 14px;
+  align-items: flex-start;
   flex-shrink: 0;
   border-radius: 16px;
   border: 2px solid rgba(79, 46, 232, 0.4);
-  background: #fff;
-}
+  background: var(--white);
 
+  @media only screen and (min-width: 768px) {
+    width: 704px;
+    height: 213px;
+    padding: 24px;
+  }
+  @media screen and (min-width: 1158px) {
+    width: 996px;
+    height: 213px;
+  }
+}
 .shopping-list-card:not(:last-child) {
   margin-bottom: 20px;
 }
@@ -19,7 +32,8 @@
 .book-name {
   margin-bottom: 4px;
   font-family: DM Sans;
-  color: #111;
+
+  color: var(--black);
   font-size: 16px;
   font-weight: 700;
   line-height: 1.125;
@@ -27,31 +41,59 @@
   text-transform: uppercase;
 }
 .book-category {
-  margin-bottom: 14px;
-  color: #b4afaf;
+  margin-bottom: 8px;
+
+  color: var(--gray);
 
   font-family: DM Sans;
   font-size: 12px;
   font-weight: 400;
   line-height: 1.167;
   letter-spacing: 0.03em;
+  @media only screen and (min-width: 768px) {
+    margin-bottom: 14px;
+  }
+  @media screen and (min-width: 1158px) {
+  }
 }
-.book-description {
-  margin-bottom: 48px;
-  color: #111;
+.book-description-card {
+  margin-bottom: 30px;
+  overflow: hidden;
+  width: 193px;
+  max-height: 56px;
 
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  color: var(--black);
   font-family: DM Sans;
-  width: 808px;
-  height: 53px;
-
   font-size: 14px;
-
   font-weight: 400;
   line-height: 1.29;
-  letter-spacing: 0.04em;
+  letter-spacing: -0.04em;
+
+  word-wrap: break-word;
+  box-sizing: border-box;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+
+  @media only screen and (min-width: 768px) {
+    margin-bottom: 48px;
+    width: 508px;
+    height: 53px;
+
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+  @media screen and (min-width: 1158px) {
+    width: 808px;
+    height: 53px;
+  }
 }
 .book-author {
-  color: #b4afaf;
+  color: var(--gray);
 
   font-family: DM Sans;
   font-size: 12px;
@@ -61,29 +103,102 @@
   letter-spacing: 0.04em;
 }
 
-.book-cover {
-  margin-right: 24px;
+.book-cover-card {
+  border-radius: 8px;
+
+  width: 100px;
+
+  margin-right: 14px;
+
+  @media only screen and (min-width: 768px) {
+    margin-right: 24px;
+    width: 116px;
+    height: 165px;
+  }
+  @media screen and (min-width: 1158px) {
+  }
 }
 
 .book-salers {
-  /* margin-right: 24px; */
+  mix-blend-mode: luminosity;
 }
 
 .delete-btn {
   position: absolute;
-  top: 24px;
-  right: 25px;
+  top: 14px;
+  right: 14px;
+
   border: none;
   background: none;
   padding: 0;
   cursor: pointer;
+  @media only screen and (min-width: 768px) {
+    top: 24px;
+    right: 25px;
+  }
+  @media screen and (min-width: 1158px) {
+  }
+}
+
+.delete-btn-svg {
+  width: 28px;
+  height: 28px;
+
+  @media only screen and (min-width: 768px) {
+    width: 34px;
+    height: 34px;
+  }
 }
 
 .stores-list {
   display: flex;
   position: absolute;
-  bottom: 24px;
-  right: 25px;
-  align-items: center;
-  gap: 24px;
+  align-items: baseline;
+  bottom: 10px;
+  right: 14px;
+
+  gap: 8px;
+  @media only screen and (min-width: 768px) {
+    bottom: 24px;
+    right: 25px;
+    gap: 16px;
+  }
+}
+.light-theme-png {
+  mix-blend-mode: luminosity;
+}
+
+.book-salers-amazon {
+  width: 32px;
+  height: 11px;
+  @media only screen and (min-width: 768px) {
+    width: 48px;
+    height: 15px;
+  }
+}
+
+.book-salers-apple {
+  width: 16px;
+  height: 16px;
+  @media only screen and (min-width: 768px) {
+    width: 28px;
+    height: 27px;
+  }
+}
+/* themes */
+
+.dark-theme .shopping-list-card {
+  background-color: var(--black);
+}
+
+.dark-theme .book-name {
+  color: var(--white);
+}
+
+.dark-theme .book-description-card {
+  color: var(--white);
+}
+
+.dark-theme .light-theme-png {
+  filter: invert(100%) grayscale(100%) brightness(100);
 }

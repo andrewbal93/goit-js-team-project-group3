@@ -41,10 +41,9 @@ export async function fetchBookById(bookId) {
   return response.data;
 }
 
-// fetchBooksCategory().then(response => console.log(response));
-// fetchAllTopBooks().then(response => console.log(response));
-// fetchBooksBySelectedCategory().then(response => console.log(response));
-// fetchBookById('643282b1e85766588626a0dc').then(response =>
-//   console.log(response)
-// );
-// console.log('hello');
+// fetchBooksCategory().then(resp => console.log(resp));
+fetchAllTopBooks();
+// fetchBooksBySelectedCategory().then(resp => console.log(resp));
+// fetchBookById("643282b1e85766588626a0dc").then(resp => console.log(resp));
+// console.log("hello");
+
