@@ -50,11 +50,11 @@ header {
 .home {
   padding: 8px 16px;
   font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 18px;
-    /* 128.571% */
-    letter-spacing: -0.56px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  /* 128.571% */
+  letter-spacing: -0.56px;
 }
 
 .shopping-list {
