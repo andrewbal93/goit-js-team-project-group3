@@ -4,7 +4,7 @@ const categoryListContainer = document.querySelector(".category-list-container")
 const bestSellersList = document.querySelector('.best-sellers-list')
 const categoryMainTitle = document.querySelector('.bestselllersTitle')
 
-console.log(categoryMainTitle);
+console.log(categoryMainTitle.textContent);
 
 await fetchBooksCategory().then((resp) => {
     return resp.map((elem) => `<li class="category-list-item">
@@ -22,6 +22,7 @@ async function catArrayValue(catName) {
   categoryElement.innerHTML = ""; 
   const categoryContainer = createCategoryContainer(catName);
   bestSellersList.appendChild(categoryContainer)
+  categoryMainTitle.textContent = catName;
   loadBooks(catName, catArray);
   // console.log(catArray);
 }
@@ -70,7 +71,7 @@ function createCategoryContainer(categoryName) {
   button.className = 'see-more';
   button.textContent = 'SEE MORE';
 
-  container.appendChild(titleDiv);
+  // container.appendChild(titleDiv);
   container.appendChild(booksDiv);
   // container.appendChild(button);
 
