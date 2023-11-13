@@ -2,6 +2,9 @@ import { fetchBooksCategory, fetchBooksBySelectedCategory } from "./bookShelfApi
 
 const categoryListContainer = document.querySelector(".category-list-container"); 
 const bestSellersList = document.querySelector('.best-sellers-list')
+const categoryMainTitle = document.querySelector('.bestselllersTitle')
+
+console.log(categoryMainTitle);
 
 await fetchBooksCategory().then((resp) => {
     return resp.map((elem) => `<li class="category-list-item">
