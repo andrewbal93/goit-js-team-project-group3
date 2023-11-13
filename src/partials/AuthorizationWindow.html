@@ -1,0 +1,66 @@
+<div><button class="open" id="openModalBtn">MODAL WINDOW</button></div>
+<div class="author-win is-hidden" data-modal>
+  <div class="modal-window">
+    <button class="btn-close" type="button" data-modal-close>
+      <svg class="icone-close" width="28" height="28">
+        <use href="../img/sprite.svg#icon-x-close"></use>
+      </svg>
+    </button>
+
+    <form class="form-win" name="client-form" autocomplete="off">
+      <div class="form-div">
+        <div class="form-container">
+          <label class="form-label" for="user-name"></label>
+          <div class="form-wrapper">
+            <input
+              class="form-input"
+              type="text"
+              id="user-name"
+              name="user-name"
+              placeholder="NAME"
+            />
+          </div>
+        </div>
+
+        <div class="form-container">
+          <label class="form-label" for="e-mail"></label>
+          <div class="form-wrapper">
+            <input
+              class="form-input"
+              type="email"
+              id="e-mail"
+              name="email"
+              placeholder="EMAIL"
+            />
+            <svg class="icon-modal" width="28" height="28">
+              <use href="../img/sprite.svg#icon-mail-02"></use>
+            </svg>
+          </div>
+        </div>
+
+        <div class="form-container">
+          <label class="form-label" for="password"></label>
+          <div class="form-wrapper">
+            <input
+              class="form-input"
+              type="password"
+              id="password"
+              name="password"
+              placeholder="PASSWORD"
+            />
+            <svg class="icon-modal" width="28" height="28">
+              <use href="../img/sprite.svg#icon-lock-02"></use>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="btn-div">
+        <button class="submit" type="submit">SIGN UP</button>
+      </div>
+      <div class="enter">
+        <button class="toggle-btn-up active" type="button">SIGN UP</button>
+        <button class="toggle-btn-in" type="button">SIGN IN</button>
+      </div>
+    </form>
+  </div>
+</div>
