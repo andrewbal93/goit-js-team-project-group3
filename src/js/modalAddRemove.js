@@ -1,29 +1,36 @@
-
-import{fetchBookById, fetchBooksCategory, fetchAllTopBooks, fetchBooksBySelectedCategory} from './bookShelfApi';
-
-
+import { fetchBookById } from './bookShelfApi';
 
 document.addEventListener('DOMContentLoaded', function () {
-    const openModalLink = document.querySelector('.listener');
+    const openModalLinks = document.querySelectorAll('.listener');
     const modal = document.querySelector('.modal');
     const closeModalButton = modal.querySelector('.modal-close');
     const addToShoppingListButton = modal.querySelector('.add-to-list');
     const backdrop = modal.querySelector('.modal-body');
     const underButtonText = modal.querySelector('.under-btn-text');
-    
-    
+
     // Open modal
-    openModalLink.addEventListener('click', function () {
-        modal.classList.add('open');
-        document.body.style.overflow = 'hidden'; // Заборона прокрутки фону
+    function openModal(bookId) {
+        fetchBookById(bookId)
+            .then((book) => {
+                createMarkup(book);
+                updateButtonText();
+                modal.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            })
+            .catch((error) => console.error('Помилка при отриманні інформації про книгу:', error));
+    }
+
+    openModalLinks.forEach((link) => {
+        link.addEventListener('click', function () {
+            const bookId = link.id;
+            openModal(bookId);
+        });
     });
 
-    // Close modal
-    const closeModal = function () {
+    function closeModal() {
         modal.classList.remove('open');
-        document.body.style.overflow = ''; // Відновлення прокрутки фону
-        // underButtonText.style.display = 'none';
-    };
+        document.body.style.overflow = '';
+    }
 
     closeModalButton.addEventListener('click', closeModal);
     backdrop.addEventListener('click', closeModal);
@@ -34,10 +41,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Add to / Remove from shopping list
     addToShoppingListButton.addEventListener('click', function (event) {
         event.stopPropagation();
-        // Оновлюємо інформацію про список в localStorage
         let shoppingList = JSON.parse(localStorage.getItem('shoppingList')) || [];
         const bookTitle = modal.querySelector('.book-title').textContent;
 
@@ -48,13 +53,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
-
-        // Оновлюємо текст кнопки в модалці
         const isBookInList = updateShoppingListButton(shoppingList);
         underButtonText.style.display = isBookInList ? 'block' : 'none';
     });
 
-    // Функція для оновлення тексту кнопки відповідно до стану списку
     function updateShoppingListButton(shoppingList) {
         const bookTitle = modal.querySelector('.book-title').textContent;
         const isBookInList = shoppingList.includes(bookTitle);
@@ -67,18 +69,11 @@ document.addEventListener('DOMContentLoaded', function () {
         return isBookInList;
     }
 
-    // Ініціалізація тексту кнопки при завантаженні сторінки
     const initialShoppingList = JSON.parse(localStorage.getItem('shoppingList')) || [];
     updateShoppingListButton(initialShoppingList);
-    // underButtonText.style.display = 'none';
 });
 
-
-
-
-function createMarkup({ _id, list_name, date, age_group, amazon_product_url, author, book_image }) {
-    // Тут ви можете використовувати отримані значення
-    // для виведення вмісту модального вікна
+function createMarkup({ title, author, description, book_image, amazon_product_url }) {
     const markup = `
       <div class="modal-content">
         <svg class="modal-close">
@@ -101,7 +96,7 @@ function createMarkup({ _id, list_name, date, age_group, amazon_product_url, aut
             </p>
             <div class="marketplace">
               <a href="${amazon_product_url}" class="marketplace-logo amazon"><img src="./img/salers1.png"></a>
-              <!-- Додайте посилання та логотип для інших майданчиків -->
+              <a href="${amazon_product_url}" class="marketplace-logo apple-books"><img src="./img/salers2.png"></a>
             </div>
           </div>
         </div>
@@ -110,8 +105,5 @@ function createMarkup({ _id, list_name, date, age_group, amazon_product_url, aut
       </div>
     `;
   
-    // Тут ви можете використовувати `markup` як вам потрібно
-    // наприклад, вставити його в DOM
     document.querySelector('.modal-body').innerHTML = markup;
-  }
-  
+}
