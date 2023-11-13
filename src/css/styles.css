@@ -16,11 +16,11 @@
 /* shopping-list */
 @import url('./shopping-list.css');
 
-/* Overlay Book Descr */
-/* @import url('./OverlayBookDescr.css'); */
-
 /* books by category */
 @import url('./booksByCategory.css');
+
+/* Overlay Book Descr */
+@import url('./OverlayBookDescr.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
