@@ -196,6 +196,7 @@
 
   .books-category-list {
     gap: 24px;
+    flex-wrap: wrap;
   }
 
   .book-category-card {

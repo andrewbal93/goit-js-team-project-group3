@@ -22,18 +22,15 @@ export async function fetchBooksCategory() {
   // }
 
 // Запит Популярні книги, що належать до усіх категорій
-export function fetchAllTopBooks() {
-  return axios.get('/books/top-books').then(resp => {
-    return resp.data;
-  });
+export async function fetchAllTopBooks() {
+  const response = await axios.get('/books/top-books')
+    return response.data;
 }
 // Запит Книги окремої категорії
-export function fetchBooksBySelectedCategory(selectedCategory) {
-  return axios
-    .get(`/books/category?category=${selectedCategory}`)
-    .then(resp => {
-      return resp.data;
-    });
+export async function fetchBooksBySelectedCategory(selectedCategory) {
+  const response = await axios.get(`/books/category?category=${selectedCategory}`)
+  console.log(response.data);
+  return response.data;
 }
 // Запит Детальна інформація про книгу по id
 export function fetchBookById(bookId) {
@@ -44,6 +41,6 @@ export function fetchBookById(bookId) {
 
 // fetchBooksCategory().then(resp => console.log(resp));
 fetchAllTopBooks().then(resp => console.log(resp));
-// fetchBooksBySelectedCategory().then(resp => console.log(resp));
+// fetchBooksBySelectedCategory("Advice How-To and Miscellaneous").then(resp => console.log(resp));
 // fetchBookById("643282b1e85766588626a0dc").then(resp => console.log(resp));
 // console.log("hello");
