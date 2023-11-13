@@ -1,7 +1,4 @@
-import {
-  fetchBooksCategory,
-  fetchAllTopBooks,
-} from './bookShelfApi';
+import { fetchBooksCategory, fetchAllTopBooks } from './bookShelfApi';
 
 // Функція для створення HTML для карточки книги
 function createBookCard(book, index) {
@@ -23,23 +20,28 @@ function createBookCard(book, index) {
 
 // Функція для завантаження книг у відповідну категорію
 function loadBooks(categoryName, books) {
-  const categoryElement = document.querySelector(`.book-category[data-category="${categoryName}"] .books-category-list`);
+  const categoryElement = document.querySelector(
+    `.book-category[data-category="${categoryName}"] .books-category-list`
+  );
   if (categoryElement) {
-    const booksHTML = books.map((book, index) => createBookCard(book, index)).join('');
+    const booksHTML = books
+      .map((book, index) => createBookCard(book, index))
+      .join('');
     categoryElement.innerHTML = booksHTML;
   }
 }
 
 // Функція для отримання та відображення книг по категоріям
 function fetchAndDisplayBooks() {
-
   fetchAllTopBooks()
     .then(categories => {
       categories.forEach(category => {
         loadBooks(category.list_name, category.books);
       });
     })
-    .catch(error => console.error('Помилка при завантаженні категорій книг:', error));
+    .catch(error =>
+      console.error('Помилка при завантаженні категорій книг:', error)
+    );
 }
 
 // !!!!!!!!!!!!!!!!!!!!
@@ -76,22 +78,20 @@ function createCategoryContainer(categoryName) {
 
 // Функція для отримання категорій та додавання контейнерів до DOM
 function fetchAndDisplayCategories() {
-
-  const bestSellersList = document.querySelector('.best-sellers-list') 
+  const bestSellersList = document.querySelector('.best-sellers-list');
 
   fetchBooksCategory()
     .then(categories => {
       // Обмеження кількості категорій до 5
       categories.forEach(category => {
         const categoryContainer = createCategoryContainer(category.list_name);
-        bestSellersList.appendChild(categoryContainer)
+        bestSellersList.appendChild(categoryContainer);
       });
     })
-    .catch(error => console.error('Помилка при завантаженні категорій книг:', error));
+    .catch(error =>
+      console.error('Помилка при завантаженні категорій книг:', error)
+    );
 }
-
-
-
 
 // Виклик функції при завантаженні сторінки
 

@@ -1,23 +1,32 @@
-import { fetchBooksCategory } from "./bookShelfApi";
+import {
+  fetchBooksBySelectedCategory,
+  fetchBooksCategory,
+} from './bookShelfApi';
 
-const categoryListContainer = document.querySelector(".category-list-container"); 
+const categoryListContainer = document.querySelector(
+  '.category-list-container'
+);
 
-fetchBooksCategory().then((resp) => {
-    return resp.map((elem) => `<li class="category-list-item">
+fetchBooksCategory()
+  .then(resp => {
+    return resp
+      .map(
+        elem => `<li class="category-list-item" >
     <button class="category-btn" type="button">
       ${elem.list_name}
     </button>
-  </li>`).join("");
-}).then((MarkUp) => categoryListContainer.insertAdjacentHTML("afterbegin", MarkUp))
+  </li>`
+      )
+      .join('');
+  })
+  .then(MarkUp =>
+    categoryListContainer.insertAdjacentHTML('afterbegin', MarkUp)
+  );
 
-
-
-// const categoryFetchResponce = fetchBooksCategory().then((value) => 
+// const categoryFetchResponce = fetchBooksCategory().then((value) =>
 //     value.json()).then((data) => {return data;});
 
 // console.log(categoryFetchResponce)
-
-
 
 // const MarkUp = categoryFetchResponce.map((elem) => `<li class="category-list-item">
 //     <button class="category-btn" type="button">
