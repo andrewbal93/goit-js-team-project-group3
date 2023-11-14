@@ -1,5 +1,14 @@
-// console.log("test");
-// import { * as images } from './assets/assets.js';
+
+import support_1 from "../img/support_logo/support_1.png";
+import support_2 from "../img/support_logo/support_2.png";
+import support_3 from "../img/support_logo/support_3.png";
+import support_4 from "../img/support_logo/support_4.png";
+import support_5 from "../img/support_logo/support_5.png";
+import support_6 from "../img/support_logo/support_6.png";
+import support_7 from "../img/support_logo/support_7.png";
+import support_8 from "../img/support_logo/support_8.png";
+import support_9 from "../img/support_logo/support_9.png";
+
 const foundationList = document.querySelector(".foundations-list");
 
 const foundations = [
@@ -7,47 +16,47 @@ const foundations = [
         title: 'Save the Children',
         url:
             'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
-        img: "./img/supportsLogo/support_9.png",
+        img: support_1,
     },
     {
         title: 'Project HOPE',
         url: 'https://www.projecthope.org/country/ukraine/',
-        img: "./img/supportsLogo/support_1.png",
+        img: support_2,
     },
     {
         title: 'UNITED24',
         url: 'https://u24.gov.ua/uk',
-        img: "./img/supportsLogo/support_2.png",
+        img: support_3,
     },
     {
         title: 'International Medical Corps',
         url: 'https://internationalmedicalcorps.org/country/ukraine/',
-        img: "./img/supportsLogo/support_3.png",
+        img: support_4,
     },
     {
         title: 'Medicins Sans Frontieres',
         url: 'https://www.msf.org/ukraine',
-        img: "./img/supportsLogo/support_4.png",
+        img: support_5,
     },
     {
         title: 'RAZOM',
         url: 'https://www.razomforukraine.org/',
-        img: "./img/supportsLogo/support_5.png",
+        img: support_6,
     },
     {
         title: 'Action against hunger',
         url: 'https://www.actionagainsthunger.org/location/europe/ukraine/',
-        img: "./img/supportsLogo/support_6.png",
+        img: support_7,
     },
     {
         title: 'World vision',
         url: 'https://www.wvi.org/emergencies/ukraine',
-        img: "./img/supportsLogo/support_7.png",
+        img: support_8,
     },
     {
         title: 'Serhiy Prytula Charity Foundation',
         url: 'https://prytulafoundation.org/en',
-        img: "./img/supportsLogo/support_8.png"
+        img: support_9,
     },
 ];
 const Murkup = foundations.map((elem, index, arr) => ` <li class="support-foundation">
