@@ -1,7 +1,4 @@
-import {
-  fetchBooksBySelectedCategory,
-  fetchBooksCategory,
-} from './bookShelfApi';
+import { fetchBooksCategory } from './bookShelfApi';
 
 const categoryListContainer = document.querySelector(
   '.category-list-container'
@@ -11,7 +8,7 @@ fetchBooksCategory()
   .then(resp => {
     return resp
       .map(
-        elem => `<li class="category-list-item" >
+        elem => `<li class="category-list-item">
     <button class="category-btn" type="button">
       ${elem.list_name}
     </button>
@@ -23,20 +20,9 @@ fetchBooksCategory()
     categoryListContainer.insertAdjacentHTML('afterbegin', MarkUp)
   );
 
-// const categoryFetchResponce = fetchBooksCategory().then((value) =>
-//     value.json()).then((data) => {return data;});
+const btnAllCategories = document.querySelector('.category-btn');
+btnAllCategories.addEventListener('click', onClickAllCategories);
 
-// console.log(categoryFetchResponce)
-
-// const MarkUp = categoryFetchResponce.map((elem) => `<li class="category-list-item">
-//     <button class="category-btn" type="button">
-//       ${elem["list_name"]}
-//     </button>
-//   </li>`).join("");
-// categoryListContainer.insertAdjacentHTML("afterbegin", MarkUp);
-
-/* <li class="category-list-item">
-    <button class="category-btn" type="button">
-      Category Placeholder Text
-    </button>
-  </li> */
+function onClickAllCategories(event) {
+  console.log(event);
+}

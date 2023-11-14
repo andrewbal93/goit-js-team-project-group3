@@ -1,13 +1,16 @@
 import { fetchBooksCategory, fetchAllTopBooks } from './bookShelfApi';
 
 // Функція для створення HTML для карточки книги
-function createBookCard(book, index) {
+ function createBookCard(book, index) {
+ 
   const mobileVisible = index === 0 ? 'mobile-visible' : '';
   const tabletVisible = index < 3 ? 'tablet-visible' : '';
   const desktopVisible = index < 5 ? 'desktop-visible' : '';
   return `
-    <li id="${book._id}" class="listener">
-      <div class="book-category-card ${mobileVisible} ${tabletVisible} ${desktopVisible}">
+
+  <li id="${book._id}" class="listener" onclick="openModal('${book._id}')">
+        <div class="book-category-card ${mobileVisible} ${tabletVisible} ${desktopVisible}">
+
         <img class="bookByCategory-img" src="${book.book_image}" alt="${book.title}">
         <div class="book-category-details">
           <h3 class="book-category-title">${book.title}</h3>
@@ -16,6 +19,7 @@ function createBookCard(book, index) {
       </div>
     </li>
   `;
+
 }
 
 // Функція для завантаження книг у відповідну категорію

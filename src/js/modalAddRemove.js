@@ -1,23 +1,20 @@
 
-// import{fetchBookById, fetchBooksCategory, fetchAllTopBooks, fetchBooksBySelectedCategory} from './request';
+import{fetchBookById, fetchBooksCategory, fetchAllTopBooks, fetchBooksBySelectedCategory} from './bookShelfApi';
 
+ // Open modal
+  window.openModal = openModal;
+  const modal =document.querySelector('.modal');
+  
+  async function openModal() {
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  }
 
-
-document.addEventListener('DOMContentLoaded', function () {
-    const openModalLink = document.querySelector('.open-modal');
-    const modal = document.querySelector('.modal');
-    const closeModalButton = modal.querySelector('.modal-close');
-    const addToShoppingListButton = modal.querySelector('.add-to-list');
-    const backdrop = modal.querySelector('.modal-body');
-    const underButtonText = modal.querySelector('.under-btn-text');
-    
-    // Open modal
-    openModalLink.addEventListener('click', function () {
-        modal.classList.add('open');
-        document.body.style.overflow = 'hidden'; // Заборона прокрутки фону
-    });
-
-    // Close modal
+// Close modal
+  
+  const backdrop = modal.querySelector('.modal-body');
+  const closeModalButton = modal.querySelector('.modal-close');
+  
     const closeModal = function () {
         modal.classList.remove('open');
         document.body.style.overflow = ''; // Відновлення прокрутки фону
@@ -33,8 +30,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Add to / Remove from shopping list
-    addToShoppingListButton.addEventListener('click', function (event) {
+     // Add to / Remove from shopping list
+    const addToShoppingListButton = modal.querySelector('.add-to-list');
+     const underButtonText = modal.querySelector('.under-btn-text');
+    
+         addToShoppingListButton.addEventListener('click', function (event) {
         event.stopPropagation();
         // Оновлюємо інформацію про список в localStorage
         let shoppingList = JSON.parse(localStorage.getItem('shoppingList')) || [];
@@ -70,6 +70,3 @@ document.addEventListener('DOMContentLoaded', function () {
     const initialShoppingList = JSON.parse(localStorage.getItem('shoppingList')) || [];
     updateShoppingListButton(initialShoppingList);
     // underButtonText.style.display = 'none';
-});
-
-
