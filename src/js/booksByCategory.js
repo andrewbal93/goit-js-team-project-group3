@@ -2,7 +2,7 @@ import { fetchBooksCategory, fetchAllTopBooks } from './bookShelfApi';
 
 // Функція для створення HTML для карточки книги
  function createBookCard(book, index) {
- 
+
   const mobileVisible = index === 0 ? 'mobile-visible' : '';
   const tabletVisible = index < 3 ? 'tablet-visible' : '';
   const desktopVisible = index < 5 ? 'desktop-visible' : '';

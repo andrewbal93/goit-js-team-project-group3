@@ -38,6 +38,7 @@
   transform: perspective(600px) translate(0px, -100%) rotatex(45deg);
 }
 .modal-close {
+    stroke: var(--black);
   width: 24px;
   height: 24px;
   position: absolute;
@@ -46,7 +47,7 @@
   cursor: pointer;
 }
 .modal-close:hover {
-  stroke: var(--color1, #4f2ee8);
+  stroke: var(--violet);
 }
 
 .book-cover {
