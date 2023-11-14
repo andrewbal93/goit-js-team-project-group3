@@ -9,7 +9,7 @@ const bestselllersTitle = document.querySelector('.bestselllersTitle');
 
 categoryListContainer.addEventListener('click', handleButtonClick);
 
-export function handleButtonClick(event) {
+function handleButtonClick(event) {
   const category = event.target.textContent.trim();
   fetchBooksBySelectedCategory(category)
     .then(resp => {
@@ -21,7 +21,7 @@ export function handleButtonClick(event) {
     });
 }
 
-export function updateBestSellersList(books) {
+function updateBestSellersList(books) {
   bestSellersList.innerHTML = '';
   books.forEach(book => {
     bestSellersList.innerHTML += createBookMarkup(book);
@@ -29,7 +29,7 @@ export function updateBestSellersList(books) {
   bestSellersList.classList.add('books-list');
 }
 
-export function createBookMarkup({ title, author, book_image }) {
+function createBookMarkup({ title, author, book_image }) {
   return `<div class="book-category">
              <div class="books">
                <ul class="books-category-list">
@@ -47,12 +47,12 @@ export function createBookMarkup({ title, author, book_image }) {
            </div>`;
 }
 
-export function updateTitle(title) {
+function updateTitle(title) {
   bestselllersTitle.textContent = title;
   stylizeLastWord(bestselllersTitle);
 }
 
-export function stylizeLastWord(element) {
+function stylizeLastWord(element) {
   let words = element.textContent.trim().split(' ');
   if (words.length > 1) {
     let lastWord = words.pop();
