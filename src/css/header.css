@@ -60,6 +60,7 @@ header {
 .shopping-list {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 4px;
   padding: 2.3px 12px;
   font-size: 14px;
@@ -69,6 +70,11 @@ header {
   /* 128.571% */
   letter-spacing: -0.56px;
 }
+
+.icon-shopping-list {
+  margin-left: 3px;
+}
+
 
 #theme-switcher {
   position: relative;
@@ -194,4 +200,8 @@ header {
 
 .dark-theme .icon-shopping-list {
   fill: #f3f3f3;
+}
+
+.dark-theme .nav-bar-active .icon-shopping-list{
+  fill: #111;
 }

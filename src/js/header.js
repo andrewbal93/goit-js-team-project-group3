@@ -25,6 +25,36 @@ document.addEventListener('DOMContentLoaded', event => {
 
 });
 
+document.addEventListener('DOMContentLoaded', event => {
+  const toggleSwitch = document.getElementById('theme-toggle');
+  const themeToggleLabel = document.getElementById('theme-toggle-label');
+
+  // Відновлення стану перемикача та теми
+  const currentTheme = localStorage.getItem('theme');
+  if (currentTheme === 'dark') {
+    document.body.classList.add('dark-theme');
+    toggleSwitch.checked = true;
+    themeToggleLabel.classList.remove('light-theme');
+    themeToggleLabel.classList.add('dark-theme');
+  }
+
+  // Зміна теми
+  toggleSwitch.addEventListener('change', () => {
+    if (toggleSwitch.checked) {
+      document.body.classList.add('dark-theme');
+      themeToggleLabel.classList.remove('light-theme');
+      themeToggleLabel.classList.add('dark-theme');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.body.classList.remove('dark-theme');
+      themeToggleLabel.classList.remove('dark-theme');
+      themeToggleLabel.classList.add('light-theme');
+      localStorage.setItem('theme', 'light');
+    }
+  });
+});
+
+
 
 
 // Підсвітка поточної сторінки в навігації
