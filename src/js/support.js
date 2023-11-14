@@ -1,4 +1,5 @@
 // console.log("test");
+// import { * as images } from './assets/assets.js';
 const foundationList = document.querySelector(".foundations-list");
 
 const foundations = [
