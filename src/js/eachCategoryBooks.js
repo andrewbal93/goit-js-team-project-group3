@@ -60,3 +60,28 @@ function stylizeLastWord(element) {
       words.join(' ') + ' <span class="last-word">' + lastWord + '</span>';
   }
 }
+
+
+
+
+function seeMorebuttonClick(category) {
+  fetchBooksBySelectedCategory(category)
+    .then(resp => {
+      updateBestSellersList(resp);
+      updateTitle(resp[0].list_name);
+    })
+    .catch(error => {
+      console.error('Error loading books:', error);
+    });
+}
+
+
+// Виклик функції при завантаженні сторінки
+document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('click', function(event) {
+    if (event.target.classList.contains('see-more')) {
+      seeMorebuttonClick(event.target.id.replace(/_/g, ' '));
+    }
+  });
+});
+

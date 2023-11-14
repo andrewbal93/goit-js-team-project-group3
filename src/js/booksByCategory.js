@@ -52,6 +52,8 @@ function fetchAndDisplayBooks() {
 
 // Функція для створення HTML контейнера категорії
 function createCategoryContainer(categoryName) {
+
+
   const container = document.createElement('div');
   container.className = 'book-category';
   container.setAttribute('data-category', categoryName);
@@ -70,7 +72,8 @@ function createCategoryContainer(categoryName) {
   booksDiv.appendChild(ul);
 
   const button = document.createElement('button');
-  button.className = 'see-more';
+  button.id = categoryName.replace(/\s+/g, '_')
+  button.classList.add('see-more');
   button.textContent = 'SEE MORE';
 
   container.appendChild(titleDiv);
@@ -96,9 +99,7 @@ function fetchAndDisplayCategories() {
 }
 
 // Виклик функції при завантаженні сторінки
-
-//Додавання контейнерів
-document.addEventListener('DOMContentLoaded', fetchAndDisplayCategories);
-
-//Додавання карток
-document.addEventListener('DOMContentLoaded', fetchAndDisplayBooks);
+document.addEventListener('DOMContentLoaded', () => {
+  fetchAndDisplayCategories();
+  fetchAndDisplayBooks();
+});
