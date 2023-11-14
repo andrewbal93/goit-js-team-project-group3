@@ -1,20 +1,19 @@
-
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 64px;
   padding: 18px 20px;
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 0px 0px 8px 8px;
   border: 1.5px solid #111;
 }
 
-.header-left{
+.header-left {
   display: flex;
   align-items: center;
-  gap: 40px ;
+  gap: 40px;
 }
 
 .header-right {
@@ -24,40 +23,51 @@ header {
   gap: 14px;
 }
 
-
-
 .logo-box {
   height: 28px;
 }
 
-.header-logo-link{
+.header-logo-link {
   display: flex;
   align-items: center;
 }
 
-.header-logo-icon{
+.header-logo-icon {
   margin-right: 8px;
 }
 
-.nav-list{
-display: flex;
+.nav-list {
+  display: flex;
   align-items: center;
   gap: 16px;
 }
 
-.nav-bar-active{
+.nav-bar-active {
   border-radius: 36px;
-  background: #EAC645;
+  background: #eac645;
 }
 
-.home{
+.home {
   padding: 8px 16px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  /* 128.571% */
+  letter-spacing: -0.56px;
 }
 
-.shopping-list{
+.shopping-list {
   display: flex;
   align-items: center;
   gap: 4px;
+  padding: 2.3px 12px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  /* 128.571% */
+  letter-spacing: -0.56px;
 }
 
 #theme-switcher {
@@ -74,12 +84,12 @@ display: flex;
   display: inline-block;
   width: 40px;
   height: 20px;
-  background: #DDD;
+  background: #ddd;
   border-radius: 20px;
   position: relative;
   cursor: pointer;
-  background-image: linear-gradient(180deg, #4F2EE8 0%, #DCDCDC 100%);
-  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
+  background-image: linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%);
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.1) inset;
 }
 
 #theme-toggle-label::after {
@@ -89,12 +99,12 @@ display: flex;
   left: 2px;
   width: 16px;
   height: 16px;
-  background: #FFF;
+  background: #fff;
   border-radius: 50%;
   transition: transform 0.3s;
 }
 
-#theme-toggle:checked+#theme-toggle-label::after {
+#theme-toggle:checked + #theme-toggle-label::after {
   transform: translateX(20px);
 }
 
@@ -105,10 +115,9 @@ display: flex;
   cursor: pointer;
 }
 
-.icon-burger-menu{
-  stroke:#111;
+.icon-burger-menu {
+  stroke: #111;
 }
-
 
 @media screen and (max-width: 768px) {
   .navbar {
@@ -120,52 +129,43 @@ display: flex;
   }
 }
 
-
-@media screen and (min-width: 768px){
-
-  header{
+@media screen and (min-width: 768px) {
+  header {
     height: 72px;
     padding-left: 32px;
     padding-right: 32px;
   }
 }
 
-@media screen and (min-width: 1158px){
+@media screen and (min-width: 1158px) {
   header {
     height: 72px;
     padding-left: 24px;
     padding-right: 24px;
   }
 
-  .header-left{
+  .header-left {
     gap: 76px;
   }
 
-  .nav-list{
+  .nav-list {
     gap: 24px;
   }
-
-
 }
-
-
-
-
-
 
 /* themes ////////////////////////*/
 
-.light-theme{
+.light-theme {
   /*  */
 }
 
-.light-theme #theme-toggle-label{
-  background-image: linear-gradient(180deg, #4F2EE8 0%, #DCDCDC 100%);
+.light-theme #theme-toggle-label {
+  background-image: linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%);
 }
 
 .dark-theme {
   background-color: #202024;
-  color: #FFFFFF99;
+  color: #ffffff99;
 }
 
 .dark-theme header {
@@ -176,22 +176,22 @@ display: flex;
   color: #f3f3f3;
 }
 
-.dark-theme .nav-bar-active{
+.dark-theme .nav-bar-active {
   color: #111;
 }
 
-.dark-theme #theme-toggle-label{
-  background-image: linear-gradient(180deg, #4F2EE8 0%, #686868 100%);
+.dark-theme #theme-toggle-label {
+  background-image: linear-gradient(180deg, #4f2ee8 0%, #686868 100%);
 }
 
-.dark-theme .icon-logo{
+.dark-theme .icon-logo {
   fill: #f3f3f3;
 }
 
-.dark-theme .icon-burger-menu{
+.dark-theme .icon-burger-menu {
   stroke: #f3f3f3;
 }
 
-.dark-theme .icon-shopping-list{
+.dark-theme .icon-shopping-list {
   fill: #f3f3f3;
 }
