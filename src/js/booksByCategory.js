@@ -92,9 +92,7 @@ function fetchAndDisplayCategories() {
         bestSellersList.appendChild(categoryContainer);
       });
     })
-    .catch(error =>
-      console.error('Помилка при завантаженні категорій книг:', error)
-    );
+    .catch(error => console.error('Error loading books:', error));
 }
 
 // Виклик функції при завантаженні сторінки

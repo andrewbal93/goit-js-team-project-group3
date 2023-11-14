@@ -57,6 +57,7 @@
 
 .book-category-card {
   display: flex;
+  cursor: pointer;
   max-width: 335px;
   max-height: 535px;
   flex-direction: column;
