@@ -1,11 +1,13 @@
 import Notiflix from 'notiflix';
-import{fetchBookById, fetchBooksCategory, fetchAllTopBooks, fetchBooksBySelectedCategory} from './bookShelfApi';
+import{fetchBookById} from './bookShelfApi';
 
-
- // Open modal
+ 
   window.openModal = openModal;
   const modal =document.querySelector('.modal');
+  const backdrop = modal.querySelector('.modal-body');
+  const closeModalButton = modal.querySelector('.modal-close');
 
+// Open modal
   async function openModal(id) {
     fetchBookById(id)
   .then(book => { 
@@ -15,7 +17,7 @@ import{fetchBookById, fetchBooksCategory, fetchAllTopBooks, fetchBooksBySelected
     renderBookDetails(book);
     const isBookInList = checkBookInShoppingList(book._id);
     
-    addToShoppingListButton.textContent = isBookInList ? 'Remove from the shopping list' : 'Add to shopping list';
+    
   })
   .catch(error => {
     Notiflix.Notify.failure("Помилка при отриманні даних про книгу:");
@@ -25,8 +27,7 @@ import{fetchBookById, fetchBooksCategory, fetchAllTopBooks, fetchBooksBySelected
   }
   
 // Close modal 
-  const backdrop = modal.querySelector('.modal-body');
-  const closeModalButton = modal.querySelector('.modal-close');
+  
   
     const closeModal = function () {
         modal.classList.remove('open');
@@ -132,3 +133,9 @@ function checkBookInShoppingList(bookId) {
   const shoppingList = JSON.parse(localStorage.getItem('shoppingList')) || [];
   return shoppingList.some(item => item._id === bookId);
 } 
+if(addToShoppingListButton.textContent === 'Add to shopping list'){
+  underButtonText.style.display = 'none';
+  
+}
+
+
