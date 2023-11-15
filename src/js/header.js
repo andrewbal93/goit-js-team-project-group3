@@ -4,9 +4,11 @@ document.addEventListener('DOMContentLoaded', event => {
   const toggleSwitch = document.getElementById('theme-toggle');
   toggleSwitch.addEventListener('change', () => {
     if (toggleSwitch.checked) {
-      document.body.classList.add('dark-theme');
+      document.documentElement.classList.add('dark-theme');
+      
     } else {
-      document.body.classList.remove('dark-theme');
+      document.documentElement.classList.remove('dark-theme');
+
     }
   });
 

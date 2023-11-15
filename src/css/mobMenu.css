@@ -37,9 +37,7 @@
   color: var(--white);
 }
 
-.icon-shopping-list {
-  fill: var(--white);
-}
+
 
 .iconHide {
   display: none;
@@ -47,6 +45,10 @@
 
 .icon-close {
   stroke: black;
+}
+
+.icon-shopping-list-mob{
+  fill: var(--white);
 }
 
 .nav-bar-active.nav-list-home-item,

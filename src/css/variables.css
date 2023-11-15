@@ -19,6 +19,12 @@
   --amazon-png-color: #fff;
   --shopping-list-btn: #fff;
 
+  --header-box-shadow: rgba(0, 0, 0, 0.1);
+  --header-bax-shadow-white: rgba(255, 255, 255, 0.1);
+  --theme-switcher-white: linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%);
+  --theme-switcher-dark: linear-gradient(180deg, #4f2ee8 0%, #686868 100%);
+  --see-more-box-shadow: rgba(0, 0, 0, 0.2);
+
   --support-Ukraine-bg: radial-gradient(
     189.32% 190.93% at 59.76% -23.42%,
     #4f2ee8 18.03%,

@@ -42,3 +42,8 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+
+.dark-theme:root {
+  background-color: var(--dark-bg-cl);
+}
