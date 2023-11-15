@@ -1,13 +1,12 @@
-
-import support_1 from "../img/support_logo/support_1.png";
-import support_2 from "../img/support_logo/support_2.png";
-import support_3 from "../img/support_logo/support_3.png";
-import support_4 from "../img/support_logo/support_4.png";
-import support_5 from "../img/support_logo/support_5.png";
-import support_6 from "../img/support_logo/support_6.png";
-import support_7 from "../img/support_logo/support_7.png";
-import support_8 from "../img/support_logo/support_8.png";
-import support_9 from "../img/support_logo/support_9.png";
+import support_1 from "../img/support_logo/support_9.png";
+import support_2 from "../img/support_logo/support_1.png";
+import support_3 from "../img/support_logo/support_2.png";
+import support_4 from "../img/support_logo/support_3.png";
+import support_5 from "../img/support_logo/support_4.png";
+import support_6 from "../img/support_logo/support_5.png";
+import support_7 from "../img/support_logo/support_6.png";
+import support_8 from "../img/support_logo/support_7.png";
+import support_9 from "../img/support_logo/support_8.png";
 import sprite from "../img/sprite.svg"
 // import arrowup from "../img/sprite.svg#icon-up-arrow";
 // import arrowdown from "../img/sprite.svg#icon-down-arrow";

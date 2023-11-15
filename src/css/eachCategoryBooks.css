@@ -9,7 +9,7 @@
   .books-list {
     width: 75%;
     max-width: 996px;
-    float: right;
+    /* float: right; */
     margin-right: 24px;
     margin-bottom: 40px;
   }

@@ -7,6 +7,8 @@
 
 @import url('./sidebar.css');
 
+@import url('./scrollup.css');
+
 /* support */
 @import url('./support.css');
 
@@ -42,7 +44,6 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-
 
 .dark-theme:root {
   background-color: var(--dark-bg-cl);

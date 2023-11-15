@@ -23,6 +23,14 @@
   color: #4f2ee8;
 }
 
+.aside-shop {
+  display: none;
+
+  @media only screen and (min-width: 1158px) {
+    display: block;
+  }
+}
+
 .book-column-img {
   margin: 0 auto;
   width: 265px;
