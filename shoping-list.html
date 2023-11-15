@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/goit-js-team-project-group3/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping List</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/modern-normalize@2.0.0/modern-normalize.css"
+    />
+    
+    <script type="module" crossorigin src="/goit-js-team-project-group3/commonHelpers3.js"></script>
+    <link rel="modulepreload" crossorigin href="/goit-js-team-project-group3/assets/mobMenu-d4f30e0e.js">
+    <link rel="stylesheet" href="/goit-js-team-project-group3/assets/mobMenu-6d52d075.css">
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/goit-js-team-project-group3/favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shopping List</title>
-  <link rel="stylesheet" href="https://unpkg.com/modern-normalize@2.0.0/modern-normalize.css" />
-  
-  <script type="module" crossorigin src="/goit-js-team-project-group3/commonHelpers3.js"></script>
-  <link rel="modulepreload" crossorigin href="/goit-js-team-project-group3/assets/mobMenu-0fe4802f.js">
-  <link rel="stylesheet" href="/goit-js-team-project-group3/assets/mobMenu-91ea2bf1.css">
-</head>
-
-<body>
-  <header>
-    <div class="header-left">
+  <body>
+    <header>
+      <div class="header-left">
   <div class="logo-box">
     <a href="./index.html" class="header-logo-link">
       <svg class="icon-logo" width="109" height="28">
@@ -55,27 +57,46 @@
       </svg>
     </button>
 </div>
-  </header>
+    </header>
 
-  <main>
-    <div class="shopping_list-section">
-      <h1 class="shopping_list-title">
-        Shopping <span class="violet">List</span>
-      </h1>
-      <div class="shopping_list-wrapper js-shopping_list">
-        <div class="shopping_list-content">
-          <p class="shopping_list-empty-text">
-            This page is empty, add some books and proceed to order.
-          </p>
-          <img class="book-column-img" srcset="/goit-js-team-project-group3/assets/book-column@1x-a278a77f.png 1x, /goit-js-team-project-group3/assets/book-column@2x-1268a808.png 2x"
-            src="/goit-js-team-project-group3/assets/book-column@1x-a278a77f.png" alt="book-column" loading="lazy" />
+    <main>
+      <aside class="aside-shop">
+        <!-- Support -->
+        <div class="support-container">
+  <div class="support-header">
+    <h3 class="suppot-h3">Support Ukraine</h3>
+    <svg class="support-logo" width="20" height="32">
+      <use href="/goit-js-team-project-group3/assets/sprite-f71770cb.svg#icon-Vector-1"></use>
+    </svg>
+  </div>
+  <ul class="foundations-list"></ul>
+  <button class="support-slider-button"></button>
+</div>
+
+      </aside>
+
+      <div class="shopping_list-section">
+        <h1 class="shopping_list-title">
+          Shopping <span class="violet">List</span>
+        </h1>
+        <div class="shopping_list-wrapper js-shopping_list">
+          <div class="shopping_list-content">
+            <p class="shopping_list-empty-text">
+              This page is empty, add some books and proceed to order.
+            </p>
+            <img
+              class="book-column-img"
+              srcset="/goit-js-team-project-group3/assets/book-column@1x-a278a77f.png 1x, /goit-js-team-project-group3/assets/book-column@2x-1268a808.png 2x"
+              src="/goit-js-team-project-group3/assets/book-column@1x-a278a77f.png"
+              alt="book-column"
+              loading="lazy"
+            />
+          </div>
         </div>
       </div>
-    </div>
 
-
-    <!-- Modal Menu -->
-    <div class="mobileMenu">
+      <!-- Modal Menu -->
+      <div class="mobileMenu">
   <div class="mobileMenu-content">
     <ul class="nav-list mobileMenu-list">
       <li class="nav-list-home-item"><a href="./index.html" class="home">Home</a></li>
@@ -106,12 +127,12 @@
     </ul>
   </div>
 </div>
+    </main>
 
-  </main>
-
-  <footer></footer>
-  
-  
-  
+    <footer></footer>
+    
+    
+    
+    
   </body>
 </html>
