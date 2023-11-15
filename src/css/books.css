@@ -28,7 +28,7 @@
 }
 
 .books-author {
-  color: #b4afaf;
+  color: var(--gray);
   font-family: DM Sans;
   font-size: 12px;
   font-style: italic;

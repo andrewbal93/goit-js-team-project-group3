@@ -14,7 +14,7 @@
   height: 100%;
   left: 0;
   top: 0;
-  background: #4f2ee8;
+  background: var(--violet);
 }
 
 .is-hidden {
@@ -34,7 +34,7 @@
   flex-shrink: 0;
   border-radius: 18px;
   border: 2px solid #111;
-  background: #f6f6f6;
+  background: var(--light-bg-cl);
 }
 
 .btn-close {
@@ -104,7 +104,7 @@
   padding: 20px 173px 20px 40px;
   border-radius: 40px;
   border: 3px solid #111;
-  background: #f6f6f6;
+  background: var(--light-bg-cl);
 }
 
 .icon-modal {
@@ -129,7 +129,7 @@
 }
 
 .submit {
-  color: #f3f3f3;
+  color: var(--logo-text-dark);
   font-family: DM Sans;
   font-size: 18px;
   font-style: normal;
@@ -176,7 +176,7 @@
 }
 
 .active {
-  color: #4f2ee8;
+  color: var(--violet);
   font-family: DM Sans;
   font-size: 18px;
   font-style: normal;
@@ -191,12 +191,12 @@
 
 .toggle-btn-in:focus {
   vertical-align: middle;
-  color: #4f2ee8;
+  color: var(--violet);
   text-decoration: underline;
 }
 
 .toggle-btn-up:focus {
   vertical-align: middle;
-  color: #4f2ee8;
+  color: var(--violet);
   text-decoration: underline;
 }
