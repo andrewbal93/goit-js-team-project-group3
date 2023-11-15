@@ -189,3 +189,9 @@
     width: 100%;
   }
 }
+
+
+
+.dark-theme .modal-content{
+  background-color: var(--dark-bg-cl);
+}

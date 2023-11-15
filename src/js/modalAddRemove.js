@@ -35,11 +35,16 @@ import{fetchBookById, fetchBooksCategory, fetchAllTopBooks, fetchBooksBySelected
     };
     
     closeModalButton.addEventListener('click', closeModal);
-    backdrop.addEventListener('click', closeModal);
+    backdrop.addEventListener('click', function(event) { 
+    //додає перевірку куди було нажато якщо поза межами модалки то закрити вікно
+    if (event.target === backdrop) {
+          closeModal();
+        }
+    });
 
     document.addEventListener('keydown', function (event) {
         if (event.key === 'Escape') {
-            closeModal();
+          closeModal();
         }
     });
 
@@ -131,3 +136,5 @@ function checkBookInShoppingList(bookId) {
   const shoppingList = JSON.parse(localStorage.getItem('shoppingList')) || [];
   return shoppingList.some(item => item._id === bookId);
 } 
+
+
