@@ -75,7 +75,6 @@ header {
   margin-left: 3px;
 }
 
-
 #theme-switcher {
   position: relative;
   display: flex;
@@ -171,7 +170,7 @@ header {
 
 .dark-theme {
   background-color: #202024;
-  color: #ffffff99;
+  color: #ffffff;
 }
 
 .dark-theme header {
@@ -202,6 +201,6 @@ header {
   fill: #f3f3f3;
 }
 
-.dark-theme .nav-bar-active .icon-shopping-list{
+.dark-theme .nav-bar-active .icon-shopping-list {
   fill: #111;
 }
