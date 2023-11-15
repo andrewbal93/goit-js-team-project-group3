@@ -9,7 +9,7 @@ header {
   border-radius: 0px 0px 8px 8px;
   border: 1.5px solid #111;
   position: relative;
-  z-index: 1000;
+  z-index: 21;
 }
 
 .header-left {
@@ -203,7 +203,8 @@ header {
   fill: #f3f3f3;
 }
 
-.dark-theme .icon-burger-menu {
+.dark-theme .icon-burger-menu,
+.dark-theme .icon-close {
   stroke: #f3f3f3;
 }
 
