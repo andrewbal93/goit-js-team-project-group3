@@ -8,6 +8,9 @@ import support_6 from "../img/support_logo/support_6.png";
 import support_7 from "../img/support_logo/support_7.png";
 import support_8 from "../img/support_logo/support_8.png";
 import support_9 from "../img/support_logo/support_9.png";
+import sprite from "../img/sprite.svg"
+// import arrowup from "../img/sprite.svg#icon-up-arrow";
+// import arrowdown from "../img/sprite.svg#icon-down-arrow";
 
 const foundationList = document.querySelector(".foundations-list");
 
@@ -68,12 +71,12 @@ foundationList.insertAdjacentHTML("afterbegin", Murkup);
 const supportBtn = document.querySelector(".support-slider-button");
 supportBtn.addEventListener('click', handlerSupport);
 let up = false;
- supportBtn.innerHTML = `  <svg width="20" height="20"><use href="./img/sprite.svg#icon-down-arrow"></use></svg>`;
+ supportBtn.innerHTML = `  <svg width="20" height="20"><use href="${sprite}#icon-down-arrow"></use></svg>`;
 function handlerSupport() {
     if (!up) {
         foundationList.scrollBy(0, 300);
         if (foundationList.scrollTop + foundationList.offsetHeight >= foundationList.scrollHeight) {
-            supportBtn.innerHTML = `  <svg width="20" height="20"><use href="./img/sprite.svg#icon-up-arrow"></use></svg>`;
+            supportBtn.innerHTML = `  <svg width="20" height="20"><use href="${sprite}#icon-up-arrow"></use></svg>`;
             up = true;
             return;
         }
@@ -82,7 +85,7 @@ function handlerSupport() {
     if (up) {
         foundationList.scrollBy(0, -300);
         if (foundationList.scrollTop === 0) {
-            supportBtn.innerHTML = `  <svg width="20" height="20"><use href="./img/sprite.svg#icon-down-arrow"></use></svg>`;
+            supportBtn.innerHTML = `  <svg width="20" height="20"><use href="${sprite}#icon-down-arrow"></use></svg>`;
             up = false;
             return;
     }
