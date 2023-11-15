@@ -1,0 +1,20 @@
+.books-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 40px 24px;
+  overflow-x: hidden;
+}
+@media screen and (min-width: 1158px) {
+  .books-list {
+    width: 75%;
+    max-width: 996px;
+    float: right;
+    margin-right: 24px;
+    margin-bottom: 40px;
+  }
+}
+
+.last-word {
+  color: var(--violet);
+}
