@@ -19,6 +19,9 @@
 /* books by category */
 @import url('./booksByCategory.css');
 
+/* mob menu */
+@import url('./mobMenu.css');
+
 /* Overlay Book Descr */
 @import url('./OverlayBookDescr.css');
 /* Each category books */
