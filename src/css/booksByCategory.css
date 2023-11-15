@@ -1,8 +1,28 @@
+.best-sellers-container{
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 320px;
+}
+
+@media screen and (min-width: 768px) {
+  .best-sellers-container{
+    max-width: 704px;
+  }
+}
+
+@media screen and (min-width: 1158px){
+  .best-sellers-container{
+    max-width: 996px;
+    margin-left: 380px;
+  }
+}
+
+
 .best-sellers-list {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  overflow-x: hidden;
 }
 
 .bestselllersTitle {
@@ -64,7 +84,6 @@
 .book-category-card {
   display: flex;
   cursor: pointer;
-  width: 335px;
   max-height: 535px;
   flex-direction: column;
   align-items: flex-start;
@@ -75,6 +94,8 @@
   /* background-color: #fff; */
   /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
   transition: transform 0.2s ease-in-out;
+  box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 .book-category-card:hover {
@@ -124,6 +145,7 @@
 
   .book-category-card {
     display: none;
+    
   }
 
   .book-category-card.mobile-visible {
@@ -145,11 +167,12 @@
   }
 
   .bookByCategory-img {
+    max-width: 218px;
     height: 316px;
   }
 
   .book-category-card {
-    width: 218px;
+    max-width: 218px;
     height: 366px;
   }
 
@@ -180,21 +203,19 @@
 /* !!!!!!!!!!!!!!!!!!!!! Ноутбук */
 @media screen and (min-width: 1158px) {
   .bookByCategory-img {
+    max-width: 180px;
     height: 256px;
   }
 
   .best-sellers-list {
-    width: 75%;
     max-width: 996px;
-    /* float: right; */
-    margin-right: 24px;
     margin-bottom: 40px;
   }
 
   /* sidebar */
 
   .book-category-card {
-    width: 180px;
+    max-width: 180px;
     height: 306px;
   }
 
