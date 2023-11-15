@@ -65,10 +65,10 @@ document.addEventListener('DOMContentLoaded', event => {
 // Підсвітка поточної сторінки в навігації
 function highlightActiveNavLink() {
   var currentPath = window.location.pathname;
-
+  console.log(currentPath);
   var navLinks = document.querySelectorAll('.nav-list li a');
 
-  navLinks.forEach(function(link) {
+  navLinks.forEach(function (link) {
     link.parentNode.classList.remove('nav-bar-active');
 
     if (link.getAttribute('href') === `..${currentPath}` || link.getAttribute('href') === `.${currentPath}` || link.getAttribute('href') === `${currentPath}`) {
