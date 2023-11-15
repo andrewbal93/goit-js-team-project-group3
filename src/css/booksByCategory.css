@@ -19,7 +19,7 @@
 }
 
 .category-title span {
-  color: #b4afaf;
+  color: var(--gray);
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
@@ -39,7 +39,7 @@
 .see-more {
   padding: 14px 28px;
   border-radius: 40px;
-  color: #111;
+  color: var(--black);
   background-color: var(--see-more-bgc-hover);
   border: 2px solid var(--violet);
   margin-top: 8px;
@@ -56,7 +56,7 @@
   background: var(--violet);
   color: var(--logo-text-dark);
   transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px var(--see-more-box-shadow);
 }
 
 /* стилізація карточок */
