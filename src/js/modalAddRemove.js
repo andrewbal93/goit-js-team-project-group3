@@ -1,7 +1,6 @@
 import Notiflix from 'notiflix';
 import{fetchBookById, fetchBooksCategory, fetchAllTopBooks, fetchBooksBySelectedCategory} from './bookShelfApi';
 
-
  // Open modal
   window.openModal = openModal;
   const modal =document.querySelector('.modal');

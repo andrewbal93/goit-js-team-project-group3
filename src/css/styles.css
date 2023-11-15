@@ -21,6 +21,8 @@
 
 /* Overlay Book Descr */
 @import url('./OverlayBookDescr.css');
+/* Each category books */
+@import url('./eachCategoryBooks.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;

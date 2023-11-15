@@ -6,6 +6,7 @@
 }
 
 .bestselllersTitle {
+  margin-top: 20px;
   margin-bottom: 40px;
 }
 
@@ -56,7 +57,8 @@
 
 .book-category-card {
   display: flex;
-  max-width: 335px;
+  cursor: pointer;
+  width: 335px;
   max-height: 535px;
   flex-direction: column;
   align-items: flex-start;
