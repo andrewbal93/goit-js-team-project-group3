@@ -78,7 +78,10 @@ addToShoppingListButton.addEventListener('click', handleShoppingListButtonClick)
 // Функція для оновлення тексту кнопки відповідно до стану списку
 function updateShoppingListButton(shoppingList) {
   const storedBook = JSON.parse(modal.getAttribute('data-book'));
-  
+  if (!storedBook) {
+    // Handle the case when data-book attribute is not present
+    return false;
+  }
   // Check if the book is in the shopping list
   const isBookInList = shoppingList.some(item => item._id === storedBook._id);
 
@@ -86,10 +89,11 @@ function updateShoppingListButton(shoppingList) {
   if (isBookInList) {
       addToShoppingListButton.textContent = 'Remove from the shopping list';
       underButtonText.style.display = 'block';
-      
+      addToShoppingListButton.addEventListener('click', handleShoppingListButtonClick);
   } else {
       addToShoppingListButton.textContent = 'Add to shopping list';
       underButtonText.style.display = 'none';
+      
   }
 
   return isBookInList;
@@ -98,7 +102,7 @@ function updateShoppingListButton(shoppingList) {
     // // Ініціалізація тексту кнопки при завантаженні сторінки
     const initialShoppingList = JSON.parse(localStorage.getItem('shoppingList')) || [];
     updateShoppingListButton(initialShoppingList, addToShoppingListButton);
-    // // underButtonText.style.display = 'none';
+    // underButtonText.style.display = 'none';
 
 
 
