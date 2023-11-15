@@ -1,8 +1,7 @@
 import { fetchBooksCategory, fetchAllTopBooks } from './bookShelfApi';
 
 // Функція для створення HTML для карточки книги
- function createBookCard(book, index) {
-
+function createBookCard(book, index) {
   const mobileVisible = index === 0 ? 'mobile-visible' : '';
   const tabletVisible = index < 3 ? 'tablet-visible' : '';
   const desktopVisible = index < 5 ? 'desktop-visible' : '';
@@ -10,8 +9,10 @@ import { fetchBooksCategory, fetchAllTopBooks } from './bookShelfApi';
 
   <li id="${book._id}" class="listener" onclick="openModal('${book._id}')">
         <div class="book-category-card ${mobileVisible} ${tabletVisible} ${desktopVisible}">
-
-        <img class="bookByCategory-img" src="${book.book_image}" alt="${book.title}">
+        <div class="overlay-div">
+          <img class="bookByCategory-img" src="${book.book_image}" alt="${book.title}">
+          <p class="overlay-txt">quick view</p>
+        </div>
         <div class="book-category-details">
           <h3 class="book-category-title">${book.title}</h3>
           <p class="book-category-author">${book.author}</p>
@@ -19,7 +20,6 @@ import { fetchBooksCategory, fetchAllTopBooks } from './bookShelfApi';
       </div>
     </li>
   `;
-
 }
 
 // Функція для завантаження книг у відповідну категорію
@@ -52,8 +52,6 @@ function fetchAndDisplayBooks() {
 
 // Функція для створення HTML контейнера категорії
 function createCategoryContainer(categoryName) {
-
-
   const container = document.createElement('div');
   container.className = 'book-category';
   container.setAttribute('data-category', categoryName);
@@ -72,7 +70,7 @@ function createCategoryContainer(categoryName) {
   booksDiv.appendChild(ul);
 
   const button = document.createElement('button');
-  button.id = categoryName.replace(/\s+/g, '_')
+  button.id = categoryName.replace(/\s+/g, '_');
   button.classList.add('see-more');
   button.textContent = 'SEE MORE';
 
