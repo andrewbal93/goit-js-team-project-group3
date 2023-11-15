@@ -29,11 +29,11 @@ function updateBestSellersList(books) {
   bestSellersList.classList.add('books-list');
 }
 
-function createBookMarkup({ title, author, book_image, _id }) {
+function createBookMarkup({ title, author, book_image }) {
   return `<div class="book-category">
              <div class="books">
                <ul class="books-category-list">
-                 <li id="${_id}" class="listener" onclick="openModal('${_id}')">
+                 <li>
                    <div class="book-category-card mobile-visible tablet-visible">
                      <img class='bookByCategory-img' src="${book_image}" alt="${title}" />
                      <div class="book-category-details">
