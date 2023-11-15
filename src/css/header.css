@@ -8,6 +8,8 @@ header {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 0px 0px 8px 8px;
   border: 1.5px solid #111;
+  position: relative;
+  z-index: 1000;
 }
 
 .header-left {
@@ -47,8 +49,17 @@ header {
   background: #eac645;
 }
 
-.home {
+.nav-list-shopping-item.nav-bar-active .shopping-list{
+  padding: 2.3px 12px;
+}
+
+.nav-list-home-item.nav-bar-active .home{
   padding: 8px 16px;
+}
+
+
+
+.home {
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -62,12 +73,10 @@ header {
   align-items: center;
   justify-content: space-between;
   gap: 4px;
-  padding: 2.3px 12px;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: 18px;
-  /* 128.571% */
   letter-spacing: -0.56px;
 }
 
