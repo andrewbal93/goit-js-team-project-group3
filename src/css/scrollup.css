@@ -1,0 +1,10 @@
+.scrollup {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  padding: 10px 15px;
+  background-color: transparent;
+  border: none;
+}
