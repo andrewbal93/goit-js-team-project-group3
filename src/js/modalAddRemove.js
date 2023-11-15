@@ -1,84 +1,11 @@
-
-
 import Notiflix from 'notiflix';
 import{fetchBookById, fetchBooksCategory, fetchAllTopBooks, fetchBooksBySelectedCategory} from './bookShelfApi';
 
 
-
-// document.addEventListener('DOMContentLoaded', function () {
-//     const openModalLink = document.querySelector('.listener');
-    
-//     
-//     
-//     
-//    
-    
-    
-//     // Open modal
-//     openModalLink.addEventListener('click', function () {
-//         modal.classList.add('open');
-//         document.body.style.overflow = 'hidden'; // Заборона прокрутки фону
-//     });
-
-//     // Close modal
-//     const closeModal = function () {
-//         modal.classList.remove('open');
-//         document.body.style.overflow = ''; // Відновлення прокрутки фону
-//         // underButtonText.style.display = 'none';
-//     };
-
-//     closeModalButton.addEventListener('click', closeModal);
-//     backdrop.addEventListener('click', closeModal);
-
-//     document.addEventListener('keydown', function (event) {
-//         if (event.key === 'Escape') {
-//             closeModal();
-//         }
-//     });
-
-//     // Add to / Remove from shopping list
-//     addToShoppingListButton.addEventListener('click', function (event) {
-//         event.stopPropagation();
-//         // Оновлюємо інформацію про список в localStorage
-//         let shoppingList = JSON.parse(localStorage.getItem('shoppingList')) || [];
-//         const bookTitle = modal.querySelector('.book-title').textContent;
-
-//         if (shoppingList.includes(bookTitle)) {
-//             shoppingList = shoppingList.filter(item => item !== bookTitle);
-//         } else {
-//             shoppingList.push(bookTitle);
-//         }
-
-//         localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
-
-//         // Оновлюємо текст кнопки в модалці
-//         const isBookInList = updateShoppingListButton(shoppingList);
-//         underButtonText.style.display = isBookInList ? 'block' : 'none';
-//     });
-
-//     // Функція для оновлення тексту кнопки відповідно до стану списку
-//     function updateShoppingListButton(shoppingList) {
-//         const bookTitle = modal.querySelector('.book-title').textContent;
-//         const isBookInList = shoppingList.includes(bookTitle);
-
-//         if (isBookInList) {
-//             addToShoppingListButton.textContent = 'Remove from the shopping list';
-//         } else {
-//             addToShoppingListButton.textContent = 'Add to shopping list';
-//         }
-//         return isBookInList;
-//     }
-
-//     // Ініціалізація тексту кнопки при завантаженні сторінки
-//     const initialShoppingList = JSON.parse(localStorage.getItem('shoppingList')) || [];
-//     updateShoppingListButton(initialShoppingList);
-//     // underButtonText.style.display = 'none';
-// });
-
  // Open modal
   window.openModal = openModal;
   const modal =document.querySelector('.modal');
-  
+
   async function openModal(id) {
     fetchBookById(id)
   .then(book => { 
@@ -86,7 +13,9 @@ import{fetchBookById, fetchBooksCategory, fetchAllTopBooks, fetchBooksBySelected
       modal.setAttribute('data-book', JSON.stringify(book));
     // Тут ви можете викликати функцію для відображення даних в модалці
     renderBookDetails(book);
+    const isBookInList = checkBookInShoppingList(book._id);
     
+    addToShoppingListButton.textContent = isBookInList ? 'Remove from the shopping list' : 'Add to shopping list';
   })
   .catch(error => {
     Notiflix.Notify.failure("Помилка при отриманні даних про книгу:");
@@ -103,7 +32,7 @@ import{fetchBookById, fetchBooksCategory, fetchAllTopBooks, fetchBooksBySelected
         modal.classList.remove('open');
         document.body.style.overflow = ''; // Відновлення прокрутки фону
         // underButtonText.style.display = 'none';
-        console.log()
+
     };
     
     closeModalButton.addEventListener('click', closeModal);
@@ -115,49 +44,62 @@ import{fetchBookById, fetchBooksCategory, fetchAllTopBooks, fetchBooksBySelected
         }
     });
 
-     // Add to / Remove from shopping list
-    const addToShoppingListButton = modal.querySelector('.add-to-list');
-     const underButtonText = modal.querySelector('.under-btn-text');
-    
-         addToShoppingListButton.addEventListener('click', function (event) {
-        event.stopPropagation();
+    // Combined function for Add to / Remove from shopping list
+const handleShoppingListButtonClick = function (event) {
+  event.stopPropagation();
 
-          // Отримуємо об'єкт book з атрибута data-book
-    const storedBook = JSON.parse(modal.getAttribute('data-book'));
-        
-        // Оновлюємо інформацію про список в localStorage
-        let shoppingList = JSON.parse(localStorage.getItem('shoppingList')) || [];
-        
-        if (shoppingList.includes(storedBook._id)) {
-          shoppingList = shoppingList.filter(item => item !== storedBook._id);
-        } else {
-          shoppingList.push(storedBook);
-        }
+  // Оновлюємо інформацію про список в localStorage
+  let shoppingList = JSON.parse(localStorage.getItem('shoppingList')) || [];
+  // Отримуємо об'єкт book з атрибута data-book
+  const storedBook = JSON.parse(modal.getAttribute('data-book'));
 
-        localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
+  // Check if the book is in the shopping list
+  const isBookInList = shoppingList.some(item => item._id === storedBook._id);
 
-        // Оновлюємо текст кнопки в модалці
-        const isBookInList = updateShoppingListButton(shoppingList);
-        underButtonText.style.display = isBookInList ? 'block' : 'none';
-    });
+  if (isBookInList) {
+      shoppingList = shoppingList.filter(item => item._id !== storedBook._id);
+  } else {
+      shoppingList.push(storedBook);
+  }
 
-    // Функція для оновлення тексту кнопки відповідно до стану списку
-    function updateShoppingListButton(shoppingList) {
-        const bookTitle = modal.querySelector('.book-title').textContent;
-        const isBookInList = shoppingList.includes(bookTitle);
+  localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
+  // Оновлюємо текст кнопки в модалці
+  updateShoppingListButton(shoppingList);
+  
+};
 
-        if (isBookInList) {
-            addToShoppingListButton.textContent = 'Remove from the shopping list';
-        } else {
-            addToShoppingListButton.textContent = 'Add to shopping list';
-        }
-        return isBookInList;
-    }
+// Add to / Remove from shopping list button
+const addToShoppingListButton = modal.querySelector('.add-to-list');
+const underButtonText = modal.querySelector('.under-btn-text');
 
-    // Ініціалізація тексту кнопки при завантаженні сторінки
+// Attach the event listener
+addToShoppingListButton.addEventListener('click', handleShoppingListButtonClick);
+
+// Функція для оновлення тексту кнопки відповідно до стану списку
+function updateShoppingListButton(shoppingList) {
+  const storedBook = JSON.parse(modal.getAttribute('data-book'));
+  
+  // Check if the book is in the shopping list
+  const isBookInList = shoppingList.some(item => item._id === storedBook._id);
+
+  // Оновлюємо текст кнопки в модалці
+  if (isBookInList) {
+      addToShoppingListButton.textContent = 'Remove from the shopping list';
+      underButtonText.style.display = 'block';
+      
+  } else {
+      addToShoppingListButton.textContent = 'Add to shopping list';
+      underButtonText.style.display = 'none';
+  }
+
+  return isBookInList;
+}
+
+    // // Ініціалізація тексту кнопки при завантаженні сторінки
     const initialShoppingList = JSON.parse(localStorage.getItem('shoppingList')) || [];
-    updateShoppingListButton(initialShoppingList);
-    // underButtonText.style.display = 'none';
+    updateShoppingListButton(initialShoppingList, addToShoppingListButton);
+    // // underButtonText.style.display = 'none';
+
 
 
     
@@ -181,4 +123,8 @@ import{fetchBookById, fetchBooksCategory, fetchAllTopBooks, fetchBooksBySelected
       appleBooksLink.href = book.buy_links.find(link => link.name === 'Apple Books')?.url || '';
     }
     
-      
+     // Function to check if a book is in the shopping list
+function checkBookInShoppingList(bookId) {
+  const shoppingList = JSON.parse(localStorage.getItem('shoppingList')) || [];
+  return shoppingList.some(item => item._id === bookId);
+} 
