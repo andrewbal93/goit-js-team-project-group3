@@ -24,15 +24,21 @@ function createBookCard(book, index) {
 // Функція для завантаження книг у відповідну категорію
 function loadBooks(categoryName, books) {
   const categoryElement = document.querySelector(
-    `.book-category[data-category="${categoryName}"] .books-category-list`
+    `.book-category[data-category="${categoryName}"]`
   );
   if (categoryElement) {
+    const loader = categoryElement.querySelector('.mask');
     const booksHTML = books
       .map((book, index) => createBookCard(book, index))
       .join('');
-    categoryElement.innerHTML = booksHTML;
+
+    const booksListElement = categoryElement.querySelector('.books-category-list');
+    booksListElement.innerHTML = booksHTML;
+    // Приховуємо лоадер, коли картки завантажені
+    loader.style.display = 'none';
   }
 }
+
 
 // Функція для отримання та відображення книг по категоріям
 function fetchAndDisplayBooks() {
@@ -58,6 +64,10 @@ function createCategoryContainer(categoryName) {
   const titleDiv = document.createElement('div');
   titleDiv.className = 'category-title';
 
+  const loaderDiv = document.createElement('div');
+  loaderDiv.className = 'mask';
+  loaderDiv.innerHTML = '<div class="loader"></div>';
+
   const titleSpan = document.createElement('span');
   titleSpan.textContent = categoryName.toUpperCase();
   titleDiv.appendChild(titleSpan);
@@ -77,6 +87,7 @@ function createCategoryContainer(categoryName) {
   button.addEventListener('click', scrollFuc);
 
   container.appendChild(titleDiv);
+  container.appendChild(loaderDiv);
   container.appendChild(booksDiv);
   container.appendChild(button);
 
