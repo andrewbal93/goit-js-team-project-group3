@@ -124,7 +124,6 @@
 .add-to-list {
   margin: 0 auto;
   padding: 14px 28px;
-  background-color: var(--shopping-list-btn);
   border: 2px solid var(--violet);
   border-radius: 40px;
   cursor: pointer;
@@ -138,11 +137,12 @@
 }
 .add-to-list:hover {
   background-color: var(--violet);
-  color: var(--logo-text-dark);
+  color: var(--white);
 }
 .add-to-list:focus {
-  background-color: #4f2ee8;
-  color: var(--logo-text-dark);
+  background-color: var(--violet);
+  color: var(--white);
+
 }
 
 .under-btn-text {
@@ -167,22 +167,31 @@
     top: 24px;
   }
   .book-cover {
+   width: 192px;
+   height: 281px;
     margin-bottom: 40px;
   }
   .box {
     display: flex;
   }
-  .book-title {
+
+  .book-title{
+    max-width: 250px;
+    font-family: DM Sans;
+  font-size: 24px;
+  font-weight: 700;
     line-height: 28px; /* 116.667% */
-    letter-spacing: -0.96px;
+  letter-spacing: -0.96px;
+
   }
-  /* .text-content{
+  .text-content{
     margin-left: 24px;
-  } */
+  }
   .book-author {
     margin-bottom: 20px;
   }
   .book-description {
+    width: 279px;
     margin-bottom: 20px;
   }
   .add-to-list {
