@@ -135,8 +135,8 @@
 
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!  Телефон*/
 @media (max-width: 767px) {
-  .best-sellers-container {
-  }
+  /*.best-sellers-container {
+  }*/
 
   .best-sellers-list {
     width: 100%;
