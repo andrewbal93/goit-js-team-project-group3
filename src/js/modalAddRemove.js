@@ -1,7 +1,7 @@
 import Notiflix from 'notiflix';
 import{fetchBookById} from './bookShelfApi';
 
- 
+
   window.openModal = openModal;
   const modal =document.querySelector('.modal');
   const backdrop = modal.querySelector('.modal-body');

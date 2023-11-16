@@ -11,6 +11,19 @@
   --book-list-light: rgba(17, 17, 17, 0.6);
   --book-list-dark: rgba(255, 255, 255, 0.6);
   --shopping-list-border: 2px solid rgba(79, 46, 232, 0.4);
+  --shopping-list-text-color: rgba(0, 0, 0, 0.6);
+  --category-btn-hover: #4f2ee8;
+  --primary-text-color: #111;
+  --see-more-bgc-hover: #f6f6f6;
+  --modal-bgc-color: #fff;
+  --amazon-png-color: #fff;
+  --shopping-list-btn: #fff;
+
+  --header-box-shadow: rgba(0, 0, 0, 0.1);
+  --header-bax-shadow-white: rgba(255, 255, 255, 0.1);
+  --theme-switcher-white: linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%);
+  --theme-switcher-dark: linear-gradient(180deg, #4f2ee8 0%, #686868 100%);
+  --see-more-box-shadow: rgba(0, 0, 0, 0.2);
 
   --support-Ukraine-bg: radial-gradient(
     189.32% 190.93% at 59.76% -23.42%,
@@ -18,4 +31,15 @@
     #fff 100%
   );
   --support-Ukraine-box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.1);
+}
+
+body.dark-theme {
+  --book-list-light: rgba(255, 255, 255, 0.6);
+  --shopping-list-text-color: rgba(255, 255, 255, 0.6);
+  --category-btn-hover: #eac645;
+  --primary-text-color: #fff;
+  --see-more-bgc-hover: #202024;
+  --modal-bgc-color: #202024;
+  --amazon-png-color: invert(100%) grayscale(100%) brightness(100);
+  --shopping-list-btn: #202024;
 }

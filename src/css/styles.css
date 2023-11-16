@@ -7,6 +7,8 @@
 
 @import url('./sidebar.css');
 
+@import url('./scrollup.css');
+
 /* support */
 @import url('./support.css');
 
@@ -19,8 +21,13 @@
 /* books by category */
 @import url('./booksByCategory.css');
 
+/* mob menu */
+@import url('./mobMenu.css');
+
 /* Overlay Book Descr */
 @import url('./OverlayBookDescr.css');
+/* Each category books */
+@import url('./eachCategoryBooks.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -36,4 +43,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+.dark-theme:root {
+  background-color: var(--dark-bg-cl);
 }
