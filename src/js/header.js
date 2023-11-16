@@ -66,19 +66,12 @@ document.addEventListener('DOMContentLoaded', event => {
 function highlightActiveNavLink() {
   var currentPath = window.location.pathname;
   var navLinks = document.querySelectorAll('.nav-list li a');
-  var home_button = document.querySelector('.home'); 
-  var sh_list_button = document.querySelector('.shopping-list'); 
-  navLinks.forEach(function (link) {
-    home_button.classList.remove('nav-bar-active');
-    sh_list_button.classList.remove('nav-bar-active');
 
-    if (`/goit-js-team-project-group3/shoping-list.html` === `${currentPath}`) { 
-      sh_list_button.classList.add('nav-bar-active');
-      home_button.classList.remove('nav-bar-active');
-    }
-    else {
-      sh_list_button.classList.remove('nav-bar-active');
-      home_button.classList.add('nav-bar-active');
+  navLinks.forEach(function (link) {
+    link.parentNode.classList.remove('nav-bar-active');
+
+    if (`/goit-js-team-project-group3${link.getAttribute('href').slice(1)}` === `${currentPath}` || link.getAttribute('href') === `.${currentPath}`) { //|| link.getAttribute('href') === `.${currentPath}` написаний для localhost
+      link.parentNode.classList.add('nav-bar-active');
     }
   });
 }
