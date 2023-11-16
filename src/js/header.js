@@ -66,12 +66,15 @@ document.addEventListener('DOMContentLoaded', event => {
 function highlightActiveNavLink() {
   var currentPath = window.location.pathname;
   var navLinks = document.querySelectorAll('.nav-list li a');
-
+  var home_button = document.querySelector('.home'); 
   navLinks.forEach(function (link) {
     link.parentNode.classList.remove('nav-bar-active');
 
     if (`/goit-js-team-project-group3/shoping-list.html` === `${currentPath}`) { 
       link.parentNode.classList.add('nav-bar-active');
+    }
+    else {
+      home_button.classList.add('nav-bar-active');
     }
   });
 }
