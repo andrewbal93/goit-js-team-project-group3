@@ -285,3 +285,17 @@
     padding: 25px 45px;
   }
 }
+
+
+@media screen and (max-width:1345px) {
+  .book-category-card.desktop-visible.lastBooktemp{
+    display: none;
+  }
+
+  .book-category{
+    max-width: 791px;
+  }
+
+
+  
+}

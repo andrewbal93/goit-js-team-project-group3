@@ -4,10 +4,11 @@ function createBookCard(book, index) {
   const mobileVisible = index === 0 ? 'mobile-visible' : '';
   const tabletVisible = index < 3 ? 'tablet-visible' : '';
   const desktopVisible = index < 5 ? 'desktop-visible' : '';
+  const lastChild = index === 4 ? 'lastBooktemp' : '';
   return `
 
   <li id="${book._id}" class="listener" onclick="openModal('${book._id}')">
-        <div class="book-category-card ${mobileVisible} ${tabletVisible} ${desktopVisible}">
+        <div class="book-category-card ${mobileVisible} ${tabletVisible} ${desktopVisible} ${lastChild}">
         <div class="overlay-div">
           <img class="bookByCategory-img" src="${book.book_image}" alt="${book.title}">
           <p class="overlay-txt">quick view</p>
