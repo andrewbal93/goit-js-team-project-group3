@@ -29,6 +29,9 @@
 /* Each category books */
 @import url('./eachCategoryBooks.css');
 
+/* loader styles */
+@import url("./loader.css");
+
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
