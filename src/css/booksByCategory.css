@@ -1,16 +1,34 @@
+.best-sellers-container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 335px;
+}
+
 .best-sellers-list {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  overflow-x: hidden;
 }
 
 .bestselllersTitle {
+  margin-top: 40px;
   margin-bottom: 40px;
+  float: left;
+}
+@media only screen and (min-width: 768px) {
+  .bestselllersTitle {
+    margin-top: 100px;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .bestselllersTitle {
+    margin-top: 40px;
+  }
 }
 
 .titleSpan {
-  color: #4f2ee8;
+  color: var(--violet);
 }
 
 .category-title {
@@ -18,7 +36,7 @@
 }
 
 .category-title span {
-  color: #b4afaf;
+  color: var(--gray);
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
@@ -26,46 +44,54 @@
 }
 
 .books {
+  max-width: 335px;
   display: flex;
   gap: 10px;
 }
 
 .bookByCategory-img {
-  width: 100%;
+  width: 335px;
   height: 485px;
+  border-radius: 8px;
 }
 .see-more {
   padding: 14px 28px;
   border-radius: 40px;
-  border: 2px solid #4f2ee8;
+  color: var(--black);
+  background-color: var(--see-more-bgc-hover);
+  border: 2px solid var(--violet);
   margin-top: 8px;
   transition: background-color 0.3s ease, transform 0.3s ease,
     box-shadow 0.3s ease;
   float: right;
 }
 
+.dark-theme .see-more {
+  color: var(--logo-text-dark);
+}
 .see-more:hover,
 .see-more:focus {
-  background: #4f2ee8;
-  color: #f3f3f3;
+  background: var(--violet);
+  color: var(--logo-text-dark);
   transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px var(--see-more-box-shadow);
 }
 
 /* стилізація карточок */
 
 .book-category-card {
   display: flex;
-  max-width: 335px;
+  cursor: pointer;
+  width: 335px;
   max-height: 535px;
   flex-direction: column;
   align-items: flex-start;
   gap: 14px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  /* border: 1px solid #ddd; */
+  /* border-radius: 5px; */
   overflow: hidden;
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  /* background-color: #fff; */
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
   transition: transform 0.2s ease-in-out;
 }
 
@@ -92,7 +118,7 @@
   line-height: 18px;
   letter-spacing: -0.64px;
   font-weight: bold;
-  color: #333;
+  color: var(--primary-text-color);
   width: 100%;
   overflow: hidden;
   white-space: nowrap;
@@ -109,12 +135,22 @@
 
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!  Телефон*/
 @media (max-width: 767px) {
+  /*.best-sellers-container {
+  }*/
+
+  .best-sellers-list {
+    width: 100%;
+  }
+
   .book-category {
+    min-width: 320px;
     max-width: 335px;
     margin: 0;
   }
 
   .book-category-card {
+    width: 100%;
+    max-height: none;
     display: none;
   }
 
@@ -125,13 +161,11 @@
 
 /* !!!!!!!!!!!!!!!!!!!!!!!!! Планшет */
 
-@media screen and (min-width: 768px) and (max-width: 1157px) {
-  .book-category {
+@media screen and (min-width: 768px) {
+  .best-sellers-container {
     max-width: 704px;
   }
-}
 
-@media screen and (min-width: 768px) {
   .book-category {
     margin: 0;
   }
@@ -171,16 +205,17 @@
 
 /* !!!!!!!!!!!!!!!!!!!!! Ноутбук */
 @media screen and (min-width: 1158px) {
+  .best-sellers-container {
+    margin-left: 350px;
+    max-width: 996px;
+  }
+
   .bookByCategory-img {
     height: 256px;
   }
 
   .best-sellers-list {
-    width: 75%;
     max-width: 996px;
-    float: right;
-    margin-right: 24px;
-    margin-bottom: 40px;
   }
 
   /* sidebar */
@@ -208,3 +243,45 @@
 }
 
 /* .............*/
+
+.overlay-div {
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay-txt {
+  color: var(--black);
+  top: 0;
+  position: absolute;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  /* 128.571% */
+  letter-spacing: -0.56px;
+  text-transform: uppercase;
+  width: 100%;
+  height: 25%;
+  padding: 48px 100px;
+  transform: translateY(400%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: var(--yellow);
+  border-radius: 0 0 8px 8px;
+}
+
+.book-category-card:hover .overlay-txt {
+  transform: translateY(300%);
+}
+
+@media screen and (min-width: 768px) {
+  .overlay-txt {
+    font-size: 16px;
+    padding: 30px 48px;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .overlay-txt {
+    padding: 25px 45px;
+  }
+}

@@ -9,15 +9,20 @@
       rel="stylesheet"
       href="https://unpkg.com/modern-normalize@2.0.0/modern-normalize.css"
     />
-    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
   </head>
 
   <body>
     <header>
-      <load src="./header.html" />
+      <load src="/partials/header.html" />
     </header>
 
     <main>
+      <aside class="aside-shop">
+        <!-- Support -->
+        <load src="/partials/support.html" />
+      </aside>
+
       <div class="shopping_list-section">
         <h1 class="shopping_list-title">
           Shopping <span class="violet">List</span>
@@ -29,21 +34,23 @@
             </p>
             <img
               class="book-column-img"
-              srcset="
-                ../img/book-column@1x.png 1x,
-                ../img/book-column@2x.png 2x
-              "
-              src="../img/book-column@1x.png"
+              srcset="/img/book-column@1x.png 1x, /img/book-column@2x.png 2x"
+              src="/img/book-column@1x.png"
               alt="book-column"
               loading="lazy"
             />
           </div>
         </div>
       </div>
+
+      <!-- Modal Menu -->
+      <load src="/partials/mobMenu.html" />
     </main>
 
     <footer></footer>
-
-    <script type="module" src="./main.js"></script>
+    <script src="/js/header.js" type="module"></script>
+    <script src="/js/mobMenu.js" type="module"></script>
+    <script src="/js/shopList.js" type="module"></script>
+    <script src="/js/support.js" type="module"></script>
   </body>
 </html>

@@ -1,18 +1,17 @@
-import {
-  fetchBooksCategory,
-  fetchAllTopBooks,
-} from './bookShelfApi';
-
+import { fetchBooksCategory, fetchAllTopBooks } from './bookShelfApi';
 // Функція для створення HTML для карточки книги
- function createBookCard(book, index) {
-
+function createBookCard(book, index) {
   const mobileVisible = index === 0 ? 'mobile-visible' : '';
   const tabletVisible = index < 3 ? 'tablet-visible' : '';
   const desktopVisible = index < 5 ? 'desktop-visible' : '';
   return `
+
   <li id="${book._id}" class="listener" onclick="openModal('${book._id}')">
         <div class="book-category-card ${mobileVisible} ${tabletVisible} ${desktopVisible}">
-        <img class="bookByCategory-img" src="${book.book_image}" alt="${book.title}">
+        <div class="overlay-div">
+          <img class="bookByCategory-img" src="${book.book_image}" alt="${book.title}">
+          <p class="overlay-txt">quick view</p>
+        </div>
         <div class="book-category-details">
           <h3 class="book-category-title">${book.title}</h3>
           <p class="book-category-author">${book.author}</p>
@@ -20,28 +19,38 @@ import {
       </div>
     </li>
   `;
-
 }
 
 // Функція для завантаження книг у відповідну категорію
 function loadBooks(categoryName, books) {
-  const categoryElement = document.querySelector(`.book-category[data-category="${categoryName}"] .books-category-list`);
+  const categoryElement = document.querySelector(
+    `.book-category[data-category="${categoryName}"]`
+  );
   if (categoryElement) {
-    const booksHTML = books.map((book, index) => createBookCard(book, index)).join('');
-    categoryElement.innerHTML = booksHTML;
+    const loader = categoryElement.querySelector('.mask');
+    const booksHTML = books
+      .map((book, index) => createBookCard(book, index))
+      .join('');
+
+    const booksListElement = categoryElement.querySelector('.books-category-list');
+    booksListElement.innerHTML = booksHTML;
+    // Приховуємо лоадер, коли картки завантажені
+    loader.style.display = 'none';
   }
 }
 
+
 // Функція для отримання та відображення книг по категоріям
 function fetchAndDisplayBooks() {
-
   fetchAllTopBooks()
     .then(categories => {
       categories.forEach(category => {
         loadBooks(category.list_name, category.books);
       });
     })
-    .catch(error => console.error('Помилка при завантаженні категорій книг:', error));
+    .catch(error =>
+      console.error('Помилка при завантаженні категорій книг:', error)
+    );
 }
 
 // !!!!!!!!!!!!!!!!!!!!
@@ -55,6 +64,10 @@ function createCategoryContainer(categoryName) {
   const titleDiv = document.createElement('div');
   titleDiv.className = 'category-title';
 
+  const loaderDiv = document.createElement('div');
+  loaderDiv.className = 'mask';
+  loaderDiv.innerHTML = '<div class="loader"></div>';
+
   const titleSpan = document.createElement('span');
   titleSpan.textContent = categoryName.toUpperCase();
   titleDiv.appendChild(titleSpan);
@@ -66,39 +79,44 @@ function createCategoryContainer(categoryName) {
   booksDiv.appendChild(ul);
 
   const button = document.createElement('button');
-  button.className = 'see-more';
+  button.id = categoryName.replace(/\s+/g, '_');
+  button.classList.add('see-more');
   button.textContent = 'SEE MORE';
 
+  // Встановлення обробника події через addEventListener
+  button.addEventListener('click', scrollFuc);
+
   container.appendChild(titleDiv);
+  container.appendChild(loaderDiv);
   container.appendChild(booksDiv);
   container.appendChild(button);
 
   return container;
 }
 
+function scrollFuc() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+
+
 // Функція для отримання категорій та додавання контейнерів до DOM
 function fetchAndDisplayCategories() {
-
-  const bestSellersList = document.querySelector('.best-sellers-list') 
+  const bestSellersList = document.querySelector('.best-sellers-list');
 
   fetchBooksCategory()
     .then(categories => {
       // Обмеження кількості категорій до 5
       categories.forEach(category => {
         const categoryContainer = createCategoryContainer(category.list_name);
-        bestSellersList.appendChild(categoryContainer)
+        bestSellersList.appendChild(categoryContainer);
       });
     })
-    .catch(error => console.error('Помилка при завантаженні категорій книг:', error));
+    .catch(error => console.error('Error loading books:', error));
 }
 
-
-
-
 // Виклик функції при завантаженні сторінки
-
-//Додавання контейнерів
-document.addEventListener('DOMContentLoaded', fetchAndDisplayCategories);
-
-//Додавання карток
-document.addEventListener('DOMContentLoaded', fetchAndDisplayBooks);
+document.addEventListener('DOMContentLoaded', () => {
+  fetchAndDisplayCategories();
+  fetchAndDisplayBooks();
+});

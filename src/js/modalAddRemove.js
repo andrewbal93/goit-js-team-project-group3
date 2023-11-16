@@ -1,7 +1,7 @@
 import Notiflix from 'notiflix';
 import{fetchBookById} from './bookShelfApi';
 
- 
+
   window.openModal = openModal;
   const modal =document.querySelector('.modal');
   const backdrop = modal.querySelector('.modal-body');
@@ -35,11 +35,16 @@ import{fetchBookById} from './bookShelfApi';
     };
     
     closeModalButton.addEventListener('click', closeModal);
-    backdrop.addEventListener('click', closeModal);
+    backdrop.addEventListener('click', function(event) { 
+    //додає перевірку куди було нажато якщо поза межами модалки то закрити вікно
+    if (event.target === backdrop) {
+          closeModal();
+        }
+    });
 
     document.addEventListener('keydown', function (event) {
         if (event.key === 'Escape') {
-            closeModal();
+          closeModal();
         }
     });
 
@@ -92,8 +97,7 @@ addToShoppingListButton.addEventListener('click', handleShoppingListButtonClick)
       amazonLink.href = book.buy_links.find(link => link.name === 'Amazon')?.url || '';
       appleBooksLink.href = book.buy_links.find(link => link.name === 'Apple Books')?.url || '';
     }
-    
-
+   
 
      function updateShoppingListButton(isBookInList) {
       // Оновлюємо текст кнопки в модалці

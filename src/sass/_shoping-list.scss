@@ -31,7 +31,7 @@
   line-height: 1.29;
   text-align: center;
 
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--shopping-list-text-color);
 
   @media only screen and (min-width: 768px) {
     letter-spacing: -0.02em;
@@ -64,10 +64,13 @@
   display: flex;
   position: relative;
   gap: 14px;
-  padding: 12px;
+  padding: 24px;
 
   border: 2px rgba(79, 46, 232, 0.4) solid;
   border-radius: 16px;
+  @media only screen and (min-width: 768px) {
+    padding: 24px;
+  }
   @media only screen and (min-width: 1440px) {
     width: 996px;
   }
@@ -81,26 +84,26 @@
   background-color: transparent;
   border: none;
   padding: 0;
-  top: 12px;
-  right: 12px;
+  top: 14px;
+  right: 14px;
+  width: 28px;
+  height: 28px;
   transition: opacity var(--transition);
   &:hover {
     opacity: 0.85;
+  }
+
+  @media only screen and (min-width: 768px) {
+    width: 34px;
+    height: 34px;
+    top: 24px;
+    right: 24px;
   }
 }
 
 .icon-dump {
   width: 24px;
   height: 24px;
-
-  @media only screen and (min-width: 375px) {
-    width: 28px;
-    height: 28px;
-  }
-  @media only screen and (min-width: 768px) {
-    width: 34px;
-    height: 34px;
-  }
 }
 
 .shop-list-item-img {
@@ -219,15 +222,12 @@
   }
 }
 
-.buy-item-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .buy-list-shop {
   display: flex;
   gap: 6px;
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
 
   align-items: center;
   @media only screen and (min-width: 375px) {
@@ -235,6 +235,8 @@
   }
   @media only screen and (min-width: 768px) {
     gap: 16px;
+    right: 24px;
+    bottom: 24px;
   }
 }
 

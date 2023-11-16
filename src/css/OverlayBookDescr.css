@@ -12,6 +12,7 @@
 .modal.open {
   opacity: 1;
   visibility: visible;
+  z-index: 999;
 }
 .modal.open .modal-content {
   transform: perspective(600px) translate(0px, 0%) rotatex(0deg);
@@ -39,7 +40,7 @@
   transform: perspective(600px) translate(0px, -100%) rotatex(45deg);
 }
 .modal-close {
-    stroke: var(--black);
+  stroke: var(--primary-text-color);
   width: 24px;
   height: 24px;
   position: absolute;
@@ -52,43 +53,56 @@
 }
 
 .book-cover {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 14px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 14px;
 }
-.book-title{
+
+.book-title {
   font-family: DM Sans;
-font-size: 16px;
-    font-weight: 700;
-    line-height: 18px; /* 112.5% */
-    letter-spacing: -0.64px;   
-margin-bottom: 4px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18px; /* 112.5% */
+  letter-spacing: -0.64px;
+  margin-bottom: 4px;
 }
 
-.book-author{
-    color: #B4AFAF;
+.book-author {
+  color: var(--gray);
 
-font-family: DM Sans;
-font-size: 12px;
-font-style: italic;
-font-weight: 400;
-line-height: 14px; /* 116.667% */
-letter-spacing: -0.48px;
-margin-bottom: 18px;
+  font-family: DM Sans;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 14px; /* 116.667% */
+  letter-spacing: -0.48px;
+  margin-bottom: 18px;
 }
 
-.book-description{
-    width:100%;
-    height:auto;
-    line-height: 18px; /* 128.571% */
-    letter-spacing: -0.56px; 
-    margin-bottom: 14px;
+.book-description {
+  width: 100%;
+  height: auto;
+  line-height: 18px; /* 128.571% */
+  letter-spacing: -0.56px;
+  margin-bottom: 14px;
 }
 .marketplace-logo {
   display: inline-block;
   /* margin: 0 8px; */
   gap: 20px;
+}
+.amazon-logo-icon {
+  filter: var(--amazon-logo-color);
+  &:hover {
+    filter: drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
+  }
+}
+.apple-logo-icon {
+  filter: var(--apple-logo-color);
+  &:hover {
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
+  }
 }
 .amazon {
   filter: grayscale(100%);
@@ -105,16 +119,16 @@ margin-bottom: 18px;
 .apple-books:hover {
   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
 }
-.dark-theme .apple-books{
+.dark-theme .apple-books {
   filter: grayscale(100%);
 }
 
- .dark-theme .apple-books{
+.dark-theme .apple-books {
   filter: grayscale(100%);
-} 
- .dark-theme .apple-books:hover{
+}
+.dark-theme .apple-books:hover {
   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
-} 
+}
 
 .add-to-list {
   margin: 0 auto;
@@ -125,7 +139,10 @@ margin-bottom: 18px;
   gap: 10px;
   left: auto;
   display: block;
- 
+}
+
+.dark-theme .add-to-list {
+  color: var(--logo-text-dark);
 }
 .add-to-list:hover {
   background-color: var(--violet);
@@ -134,10 +151,11 @@ margin-bottom: 18px;
 .add-to-list:focus {
   background-color: var(--violet);
   color: var(--white);
+
 }
 
-.under-btn-text{
-  color: rgba(17, 17, 17, 0.50);
+.under-btn-text {
+  color: rgba(17, 17, 17, 0.5);
   text-align: center;
   font-size: 12px;
 
@@ -148,7 +166,7 @@ margin-bottom: 18px;
 @media screen and (min-width: 769px) {
   .modal-content {
     max-width: 579px;
-   
+
     padding: 40px;
   }
   .modal-close {
@@ -165,6 +183,7 @@ margin-bottom: 18px;
   .box {
     display: flex;
   }
+
   .book-title{
     max-width: 250px;
     font-family: DM Sans;
@@ -172,6 +191,7 @@ margin-bottom: 18px;
   font-weight: 700;
     line-height: 28px; /* 116.667% */
   letter-spacing: -0.96px;
+
   }
   .text-content{
     margin-left: 24px;
@@ -186,4 +206,10 @@ margin-bottom: 18px;
   .add-to-list {
     width: 100%;
   }
+}
+
+
+
+.dark-theme .modal-content{
+  background-color: var(--dark-bg-cl);
 }
