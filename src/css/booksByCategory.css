@@ -1,4 +1,4 @@
-.best-sellers-container{
+.best-sellers-container {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -113,7 +113,6 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-
 }
 
 .book-category-author {
@@ -126,13 +125,12 @@
 
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!  Телефон*/
 @media (max-width: 767px) {
-  .best-sellers-container{
-  }
+  /* .best-sellers-container{
+  } */
 
-  .best-sellers-list{
+  .best-sellers-list {
     width: 100%;
   }
-
 
   .book-category {
     min-width: 320px;
@@ -154,10 +152,10 @@
 /* !!!!!!!!!!!!!!!!!!!!!!!!! Планшет */
 
 @media screen and (min-width: 768px) {
-  .best-sellers-container{
+  .best-sellers-container {
     max-width: 704px;
   }
-  
+
   .book-category {
     margin: 0;
   }
@@ -197,11 +195,11 @@
 
 /* !!!!!!!!!!!!!!!!!!!!! Ноутбук */
 @media screen and (min-width: 1158px) {
-  .best-sellers-container{
+  .best-sellers-container {
     margin-left: 350px;
     max-width: 996px;
   }
-  
+
   .bookByCategory-img {
     height: 256px;
   }
