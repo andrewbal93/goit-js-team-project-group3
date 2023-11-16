@@ -65,13 +65,12 @@ document.addEventListener('DOMContentLoaded', event => {
 // Підсвітка поточної сторінки в навігації
 function highlightActiveNavLink() {
   var currentPath = window.location.pathname;
-  console.log(currentPath);
   var navLinks = document.querySelectorAll('.nav-list li a');
 
   navLinks.forEach(function (link) {
     link.parentNode.classList.remove('nav-bar-active');
 
-    if (link.getAttribute('href') === `..${currentPath}` || link.getAttribute('href') === `.${currentPath}` || link.getAttribute('href') === `${currentPath}`) {
+    if (`/goit-js-team-project-group3${link.getAttribute('href').slice(1)}` === `${currentPath}` || link.getAttribute('href') === `.${currentPath}`) { //|| link.getAttribute('href') === `.${currentPath}` написаний для localhost
       link.parentNode.classList.add('nav-bar-active');
     }
   });

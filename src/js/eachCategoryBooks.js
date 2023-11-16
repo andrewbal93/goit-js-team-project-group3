@@ -35,8 +35,11 @@ function createBookMarkup({ title, author, book_image, _id }) {
                <ul class="books-category-list">
                  <li id="${_id}" class="listener" onclick="openModal('${_id}')">
                    <div class="book-category-card mobile-visible tablet-visible">
-                     <img class='bookByCategory-img' src="${book_image}" alt="${title}" />
-                     <div class="book-category-details">
+                    <div class="overlay-div">
+                      <img class='bookByCategory-img' src="${book_image}" alt="${title}" />
+                      <p class="overlay-txt">quick view</p>
+                    </div> 
+                    <div class="book-category-details">
                        <h3 class="book-category-title">${title}</h3>
                        <p class="book-category-author">${author}</p>
                      </div>

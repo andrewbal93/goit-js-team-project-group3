@@ -49,6 +49,11 @@ header {
   background: var(--yellow);
 }
 
+.nav-bar-active:focus,
+.nav-bar-active:hover{
+  transform: translateY(-3px);
+}
+
 .nav-list-shopping-item.nav-bar-active .shopping-list{
   padding: 2.3px 12px;
 }
@@ -68,6 +73,11 @@ header {
   letter-spacing: -0.56px;
 }
 
+.home:hover,
+.home:focus{
+  transform: translateY(-3px);
+}
+
 .shopping-list {
   display: flex;
   align-items: center;
@@ -82,6 +92,11 @@ header {
 
 .icon-shopping-list {
   margin-left: 3px;
+}
+
+.shopping-list:hover,
+.shopping-list:focus{
+  transform: translateY(-3px);
 }
 
 #theme-switcher {
@@ -132,6 +147,12 @@ header {
 .icon-burger-menu {
   stroke: #111;
 }
+
+.icon-burger-menu:hover,
+.icon-burger-menu:focus{
+  stroke: var(--category-btn-hover);
+}
+
 
 @media screen and (max-width: 768px) {
   .navbar {

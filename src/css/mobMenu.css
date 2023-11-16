@@ -46,6 +46,10 @@
 .icon-close {
   stroke: black;
 }
+.icon-close:hover,
+.icon-close:focus{
+  stroke: var(--category-btn-hover);
+}
 
 .icon-shopping-list-mob{
   fill: var(--white);
