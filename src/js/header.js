@@ -77,7 +77,7 @@ function highlightActiveNavLink() {
       home_button.classList.remove('nav-bar-active');
     }
     else {
-      link.parentNode.classList.remove('nav-bar-active');
+      sh_list_button.classList.remove('nav-bar-active');
       home_button.classList.add('nav-bar-active');
     }
   });
