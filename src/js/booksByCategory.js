@@ -1,5 +1,4 @@
 import { fetchBooksCategory, fetchAllTopBooks } from './bookShelfApi';
-
 // Функція для створення HTML для карточки книги
 function createBookCard(book, index) {
   const mobileVisible = index === 0 ? 'mobile-visible' : '';
@@ -74,12 +73,21 @@ function createCategoryContainer(categoryName) {
   button.classList.add('see-more');
   button.textContent = 'SEE MORE';
 
+  // Встановлення обробника події через addEventListener
+  button.addEventListener('click', scrollFuc);
+
   container.appendChild(titleDiv);
   container.appendChild(booksDiv);
   container.appendChild(button);
 
   return container;
 }
+
+function scrollFuc() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+
 
 // Функція для отримання категорій та додавання контейнерів до DOM
 function fetchAndDisplayCategories() {
