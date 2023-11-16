@@ -70,7 +70,7 @@ function highlightActiveNavLink() {
   navLinks.forEach(function (link) {
     link.parentNode.classList.remove('nav-bar-active');
 
-    if (`/goit-js-team-project-group3${link.getAttribute('href').slice(1)}` === `${currentPath}` || link.getAttribute('href') === `.${currentPath}`) { //|| link.getAttribute('href') === `.${currentPath}` написаний для localhost
+    if (`/goit-js-team-project-group3/shoping-list.html` === `${currentPath}`) { 
       link.parentNode.classList.add('nav-bar-active');
     }
   });
