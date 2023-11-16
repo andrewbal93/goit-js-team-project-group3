@@ -12,9 +12,19 @@
 }
 
 .bestselllersTitle {
-  margin-top: 20px;
+  margin-top: 40px;
   margin-bottom: 40px;
   float: left;
+}
+@media only screen and (min-width: 768px) {
+  .bestselllersTitle {
+    margin-top: 100px;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .bestselllersTitle {
+    margin-top: 40px;
+  }
 }
 
 .titleSpan {
@@ -125,8 +135,8 @@
 
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!  Телефон*/
 @media (max-width: 767px) {
-  /* .best-sellers-container{
-  } */
+  /*.best-sellers-container {
+  }*/
 
   .best-sellers-list {
     width: 100%;
