@@ -42,7 +42,7 @@ function loadBooks(categoryName, books) {
 
 
 // Функція для отримання та відображення книг по категоріям
-function fetchAndDisplayBooks() {
+export function fetchAndDisplayBooks() {
   fetchAllTopBooks()
     .then(categories => {
       categories.forEach(category => {
@@ -102,12 +102,11 @@ function scrollFuc() {
 
 
 // Функція для отримання категорій та додавання контейнерів до DOM
-function fetchAndDisplayCategories() {
+export function fetchAndDisplayCategories() {
   const bestSellersList = document.querySelector('.best-sellers-list');
 
   fetchBooksCategory()
     .then(categories => {
-      // Обмеження кількості категорій до 5
       categories.forEach(category => {
         const categoryContainer = createCategoryContainer(category.list_name);
         bestSellersList.appendChild(categoryContainer);

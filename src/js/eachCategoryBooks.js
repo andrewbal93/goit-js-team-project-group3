@@ -1,4 +1,5 @@
 import { fetchBooksBySelectedCategory } from './bookShelfApi';
+import { fetchAndDisplayBooks, fetchAndDisplayCategories } from './booksByCategory';
 
 const categoryListContainer = document.querySelector(
   '.category-list-container'
@@ -11,15 +12,25 @@ categoryListContainer.addEventListener('click', handleButtonClick);
 
 function handleButtonClick(event) {
   const category = event.target.textContent.trim();
-  fetchBooksBySelectedCategory(category)
-    .then(resp => {
-      updateBestSellersList(resp);
-      updateTitle(resp[0].list_name);
-      onCategoryClick();
-    })
-    .catch(error => {
-      console.error('Error loading books:', error);
-    });
+
+  if (category === 'All categories') {
+    bestSellersList.innerHTML = '';
+    bestSellersList.classList.remove('books-list');
+    fetchAndDisplayCategories();
+    fetchAndDisplayBooks();
+    updateTitle('Best Sellers Books');
+  }
+  else {
+    fetchBooksBySelectedCategory(category)
+      .then(resp => {
+        updateBestSellersList(resp);
+        updateTitle(resp[0].list_name);
+      })
+      .catch(error => {
+        console.error('Error loading books:', error);
+      });
+  }
+
 }
 
 function updateBestSellersList(books) {
