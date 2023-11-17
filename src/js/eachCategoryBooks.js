@@ -95,17 +95,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-
-const categoryBtn = document.querySelector('.category-btn');
-const firstBtn = document.querySelector('.first-btn ');
-
-categoryBtn.addEventListener('click', onCategoryClick);
-firstBtn.addEventListener('click', onFistBtnClick);
-
-function onCategoryClick() {
-  firstBtn.classList.remove('category-btn-active');
-}
-
-function onFistBtnClick() {
-  window.location.href = 'index.html';
-}
