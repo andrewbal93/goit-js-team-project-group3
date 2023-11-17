@@ -12,6 +12,7 @@ categoryListContainer.addEventListener('click', handleButtonClick);
 
 function handleButtonClick(event) {
   const category = event.target.textContent.trim();
+
   if (category === 'All categories') {
     bestSellersList.innerHTML = '';
     bestSellersList.classList.remove('books-list');
@@ -29,6 +30,7 @@ function handleButtonClick(event) {
         console.error('Error loading books:', error);
       });
   }
+
 }
 
 function updateBestSellersList(books) {
@@ -74,9 +76,6 @@ function stylizeLastWord(element) {
   }
 }
 
-
-
-
 function seeMorebuttonClick(category) {
   fetchBooksBySelectedCategory(category)
     .then(resp => {
@@ -88,13 +87,25 @@ function seeMorebuttonClick(category) {
     });
 }
 
-
 // Виклик функції при завантаженні сторінки
 document.addEventListener('DOMContentLoaded', () => {
-  document.addEventListener('click', function(event) {
+  document.addEventListener('click', function (event) {
     if (event.target.classList.contains('see-more')) {
       seeMorebuttonClick(event.target.id.replace(/_/g, ' '));
     }
   });
 });
 
+const categoryBtn = document.querySelector('.category-btn');
+const firstBtn = document.querySelector('.first-btn ');
+
+categoryBtn.addEventListener('click', onCategoryClick);
+firstBtn.addEventListener('click', onFistBtnClick);
+
+function onCategoryClick() {
+  firstBtn.classList.remove('category-btn-active');
+}
+
+function onFistBtnClick() {
+  window.location.href = 'index.html';
+}
