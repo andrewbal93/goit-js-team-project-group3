@@ -18,13 +18,19 @@ import{fetchBookById} from './bookShelfApi';
 
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
+    updateShoppingListButton(isBookInShoppingList(book));
 
     } catch (error)  {
       Notiflix.Notify.failure('error');
   };
 
 
-  }
+}
+  
+function isBookInShoppingList(book) {
+  const shoppingList = JSON.parse(localStorage.getItem('shoppingList')) || [];
+  return shoppingList.some(item => item._id === book._id);
+}
   
 // Close modal 
     const closeModal = function () {
@@ -70,7 +76,6 @@ function handleShoppingListButtonClick (event) {
       shoppingList.push(storedBook);
       
   }
-console.log(isBookInList)
   localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
   updateShoppingListButton(!isBookInList);
 };

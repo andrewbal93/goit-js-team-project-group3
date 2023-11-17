@@ -33,8 +33,6 @@ fetchBooksCategory()
 // Функція, яка викликається, коли текст h1 змінюється
 function onH1Change(newText) {
   var list123 = document.querySelectorAll('.category-list-container li button');
-  console.log('Текст h1 змінився на:', newText);
-
 
   list123.forEach(function (item) {
     item.classList.remove('category-btn-active');

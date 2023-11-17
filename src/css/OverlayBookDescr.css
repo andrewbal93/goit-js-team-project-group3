@@ -139,6 +139,7 @@
   gap: 10px;
   left: auto;
   display: block;
+  background-color: inherit;
 }
 
 .dark-theme .add-to-list {
@@ -148,11 +149,11 @@
   background-color: var(--violet);
   color: var(--white);
 }
-.add-to-list:focus {
+/* .add-to-list:focus {
   background-color: var(--violet);
   color: var(--white);
 
-}
+} */
 
 .under-btn-text {
   color: rgba(17, 17, 17, 0.5);
@@ -163,6 +164,11 @@
   letter-spacing: -0.48px;
   margin-top: 8px;
 }
+
+.dark-theme .under-btn-text{
+  color: var(--white);
+}
+
 @media screen and (min-width: 769px) {
   .modal-content {
     max-width: 579px;
