@@ -10,8 +10,10 @@ fetchBooksCategory()
     const categoriesMarkup = resp
       .map(
         elem => `<li class="category-list-item">
+
         <button class="category-btn" type="button">${elem.list_name}</button>
       </li>`
+
       )
       .join('');
 
@@ -33,6 +35,7 @@ function onH1Change(newText) {
   var list123 = document.querySelectorAll('.category-list-container li button');
   console.log('Текст h1 змінився на:', newText);
 
+
   list123.forEach(function (item) {
     item.classList.remove('category-btn-active');
 
@@ -43,6 +46,7 @@ function onH1Change(newText) {
       item.classList.add('category-btn-active');
     }
   });
+
 }
 
 // Створення нового спостерігача
