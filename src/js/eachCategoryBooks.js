@@ -15,6 +15,7 @@ function handleButtonClick(event) {
     .then(resp => {
       updateBestSellersList(resp);
       updateTitle(resp[0].list_name);
+      onCategoryClick();
     })
     .catch(error => {
       console.error('Error loading books:', error);
@@ -64,9 +65,6 @@ function stylizeLastWord(element) {
   }
 }
 
-
-
-
 function seeMorebuttonClick(category) {
   fetchBooksBySelectedCategory(category)
     .then(resp => {
@@ -78,13 +76,25 @@ function seeMorebuttonClick(category) {
     });
 }
 
-
 // Виклик функції при завантаженні сторінки
 document.addEventListener('DOMContentLoaded', () => {
-  document.addEventListener('click', function(event) {
+  document.addEventListener('click', function (event) {
     if (event.target.classList.contains('see-more')) {
       seeMorebuttonClick(event.target.id.replace(/_/g, ' '));
     }
   });
 });
 
+const categoryBtn = document.querySelector('.category-btn');
+const firstBtn = document.querySelector('.first-btn ');
+
+categoryBtn.addEventListener('click', onCategoryClick);
+firstBtn.addEventListener('click', onFistBtnClick);
+
+function onCategoryClick() {
+  firstBtn.classList.remove('category-btn-active');
+}
+
+function onFistBtnClick() {
+  window.location.href = 'index.html';
+}
