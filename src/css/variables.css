@@ -16,7 +16,8 @@
   --primary-text-color: #111;
   --see-more-bgc-hover: #f6f6f6;
   --modal-bgc-color: #fff;
-  --amazon-png-color: #fff;
+  --amazon-png-color: grayscale(100%);
+  --apple-logo-color: grayscale(100%);
   --shopping-list-btn: #fff;
 
   --header-box-shadow: rgba(0, 0, 0, 0.1);
@@ -40,6 +41,7 @@ body.dark-theme {
   --primary-text-color: #fff;
   --see-more-bgc-hover: #202024;
   --modal-bgc-color: #202024;
-  --amazon-png-color: invert(100%) grayscale(100%) brightness(100);
+  --amazon-logo-color: brightness(0) invert(1);
+  --apple-logo-color: grayscale(100%);
   --shopping-list-btn: #202024;
 }

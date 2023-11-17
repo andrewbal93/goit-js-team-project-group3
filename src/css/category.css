@@ -2,8 +2,8 @@
 
 .category-list {
   display: flex;
-  width: 335px;
-  height: 450px;
+  /* width: 335px; */
+  height: 280px;
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
@@ -47,7 +47,7 @@
 /* tablet styles */
 @media screen and (min-width: 768px) {
   .category-list {
-    width: 337px;
+    /* width: 337px; */
     height: 474px;
     gap: 30px;
   }

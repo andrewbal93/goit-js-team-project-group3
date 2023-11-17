@@ -16,7 +16,7 @@ function cardBook({
 }) {
   return `<li class="shopping-list-book-item js-sl-item-${_id}">
         <button class="btn-dump js-btn-dump" type="button" id=${_id} aria-label="dump"> 
-        <svg with="20" height="20"><use href="${dumpIcon}#icon-dump"></use>
+        <svg class="delete-btn-svg"with="20" height="20"><use href="${dumpIcon}#icon-dump"></use>
         </svg>
         </button>
         <img class="shop-list-item-img" src="${book_image}" alt="${book_image}" width="100" height="142" loading="lazy"/>  
@@ -26,17 +26,17 @@ function cardBook({
         
         <p class="shop-list-item-category">${list_name}</p>
         <p class="shop-list-item-description">${description}</p>
-        <div class="buy-item-wrapper">
+        
           <p class="shop-list-item-author">${author}</p>
           <ul class="buy-list-shop list">
             <li class="buy-item">
               <a href="${buy_links[0].url}"><img class="store-1 store-1-sl" src="${store1}" alt="" width="46" loading="lazy"/></a>
             </li>
             <li class="buy-item">
-              <a href="${buy_links[1].url}"><img class="store-2 store-2-sl" src="${store2}" alt="" width="33" loading="lazy"/></a>
+              <a href="${buy_links[1].url}"><img class="store-2 store-2-sl" src="${store2}" alt="" width="28" loading="lazy"/></a>
             </li>
           </ul>
-        </div>
+        
       </div>
       </li>`;
 }
